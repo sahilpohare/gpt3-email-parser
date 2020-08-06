@@ -1,13 +1,9 @@
 import openai
-
 openai.api_key = 'sk-r5uc6is7lzeluGzpT0DOfYjbeJh7s8WPmMyfhngY'
-
 from gpt import Example
 from gpt import GPT
-import timeit
-import time 
-
-
+import time
+import json
 
 mail1 = str('''Hey rahul81!
 
@@ -204,37 +200,18 @@ Thanks,
 The GitHub Team''')
 
 
-# gpt_3auth = GPT(engine="ada",temperature=.9,max_tokens=60)
-
-
-# gpt_3auth.add_example(Example(mail2,'invitor: sahilpohare\nrepo: libp2pTSNeuralnet\nlink: https://github.com/sahilpohare/libp2pTSNeuralnet\nFor: rahuldas.rr81@gmail.com\ntype: Invitation'))
-# gpt_3auth.add_example(Example(mail4,'invitor: rahul81\nrepo: neuralnets\nlink: https://github.com/rahul81/neuralnetst\nFor: sahilpohare@gmail.com\ntype: Invitaion'))
-# gpt_3auth.add_example(Example(mail6,'invitor: saket11\nrepo: syrian\nlink: https://github.com/saket11/syrian\nFor: rahuldas.rr.rd@gmail.com\ntype: Invitaion'))
-# gpt_3auth.add_example(Example(mail7,'name: ShriRam\nApplication: Mandir\nFrom: UP Team\ntype: Auth'))
-# gpt_3auth.add_example(Example(mail8,'invitor: Janki\nrepo: ayodhya\nlink: https://github.com/Janki/ayodhya\nFor: lakshman@gmail.com\ntype: Invitation'))
-
-
-
-# print(gpt_3auth.get_top_reply(i_mail))
-# output = gpt_3auth.submit_request(i_mail)
-# print("Invite:", output['choices'][0].text)
-# output = gpt_3auth.submit_request(i_mail2)
-# print("Invite:", output['choices'][0].text)
-# output = gpt_3auth.submit_request(i_mail3)
-# print("Invite:", output['choices'][0].text)
 
 
 
 
-
-
-gpt_3auth = GPT(engine="davinci",temperature=.9,max_tokens=60)
+gpt_3auth = GPT(engine="davinci",temperature=.9,max_tokens=80)
 
 
 gpt_3auth.add_example(Example(mail1,'{"name":"rahul81, "Application":"Dockship", "From":"The GitHub Team", "type":"Auth"}'))
 gpt_3auth.add_example(Example(mailv_1,'{"name":"rahul81" , "Device":"Linux", "verification_code":"849680", "From":"The GitHub"}'))
 gpt_3auth.add_example(Example(mail3,'{"name":"sahilp", "Application":"Jovian", "From":"The GitHub Team", "type":"Auth"}'))
 gpt_3auth.add_example(Example(mail8,'invitor: Janki\nrepo: ayodhya\nlink: https://github.com/Janki/ayodhya\nFor: lakshman@gmail.com\ntype: Invitation'))
+gpt_3auth.add_example(Example(mail8,'{"invitor": "Janki", "repo": "ayodhya", "link": "https://github.com/Janki/ayodhya", "For": "lakshman@gmail.com", "type": "Invitation"}'))
 
 # gpt_3auth.add_example(Example(mail5,'name: gangu\nApplication: Turista\nFrom: The GitHub Team\ntype: Auth'))
 
@@ -250,18 +227,35 @@ gpt_3auth.add_example(Example(mail8,'invitor: Janki\nrepo: ayodhya\nlink: https:
 # end = time.time()
 # print(f"Time: {end-st}")
 
+
+def write_to_json(output,filename):
+    output = json.dumps(output['choices'][0].text)
+    with open('./results/'+filename+'.json', 'w') as f:
+        json.dump(output,f)
+
+
+
+print('Input: ',a_mail)
 output = gpt_3auth.submit_request(a_mail)
 print("Auth:", output['choices'][0].text)
 
 
+write_to_json(output,'Auth')
 
+
+print('Input: ',mailv_t)
 output = gpt_3auth.submit_request(mailv_t)
 print("verify:", output['choices'][0].text)
 
+write_to_json(output,'Verification')
+
+
+
+print('Input: ',i_mail)
 output = gpt_3auth.submit_request(i_mail)
 print("Invitation", output['choices'][0].text)
 
-# print("Auth:", output['choices'][0].text)
+write_to_json(output,'Invitation')
 
 
 
@@ -269,18 +263,10 @@ print("Invitation", output['choices'][0].text)
 
 
 
-#initialize the GPT class with required parameters
-gpt_3auth = GPT(engine="davinci",temperature=.9,max_tokens=60)
-
-#feed 2 examples to the api
-gpt_3auth.add_example(Example(mailv_1,'{"name":"rahul81" , "Device":"Linux", "verification_code":"849680", "From":"The GitHub"}'))
-gpt_3auth.add_example(Example(mailv_2,'{"name":"nikhilm" , "Device":"android", "verification_code":"234557", "From":"The GitHub"}'))
 
 
 
-# for i in range(8):
-#     print(i+1)
-#     print(gpt_3auth.get_top_reply(mailv_t))
+
 
 
 
