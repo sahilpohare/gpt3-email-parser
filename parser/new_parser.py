@@ -7,14 +7,15 @@ import argparse
 
 argparser = argparse.ArgumentParser()
 
-argparser.add_argument('-i','--input', type=str)
-argparser.add_argument('-r','--run', type=str, default=False)
+argparser.add_argument('-i','--input', type=str, default=None)
+# argparser.add_argument('-r','--run', type=str, default=False)
+argparser.add_argument('-b','--body', type=str, default=None)
 
 args = argparser.parse_args()
 
 filename = args.input
-run_all = args.run
-
+# run_all = args.run
+body = args.body
 
 
 PATH = './test_html'
@@ -43,17 +44,12 @@ def run(filename):
         print(e)
 
 
-if run_all:
 
-    run('add_email.html')
-    run('first_party_authentication.html')
-    run('invite.html')
-    run('invite2.html')
-    run('third_party_authenticate.html')
-    run('verify.html')
-else:
-
+if filename != None:
     run(filename)
+elif body != None:
+    response = parse(convert(body))
+    print(response)
 
 
 
