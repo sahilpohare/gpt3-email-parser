@@ -2,7 +2,6 @@ import openai
 from gpt import Example
 from gpt import GPT
 from converter import convert
-# from gpt_train import parse
 import os
 
 openai.api_key = 'sk-r5uc6is7lzeluGzpT0DOfYjbeJh7s8WPmMyfhngY'
