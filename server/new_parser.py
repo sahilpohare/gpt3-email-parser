@@ -32,13 +32,13 @@ def read_html(path):
 def run(filename):
     try:
         test = read_html(os.path.join(PATH,filename))
-        print(test)
-        response = json.loads(parse(test))
+        #print(test)
+        response = parse(test)
         print(response)
-        print(' ')
-        with open('./results/'+filename.split('.')[0]+'.json','w') as f:
-            json.dump(response, f)
-            f.close()
+        #print(' ')
+        # with open('./results/'+filename.split('.')[0]+'.json','w') as f:
+        #     json.dump(response, f)
+        #     f.close()
         return response
     except Exception as e:
         print(e)
