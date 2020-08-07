@@ -1,5 +1,5 @@
 from converter import convert
-
+from gpt_train import gpt_invite
 PATH = './html/'
 
 def read_html(path):
@@ -12,10 +12,13 @@ def read_html(path):
 
 mail1 = read_html(PATH + 'invite1.html')
 
-print(convert(mail1))
+mail_test = convert(mail1)
 
+print(mail_test)
+#Now parse this mail the train gpt
 
-"Now parse this mail the train gpt "
+print(gpt_invite(mail_test))
+
 
 
 
