@@ -14,16 +14,22 @@ def read_html(path):
         resp = convert(resp)
     return resp
 
-test = read_html(PATH+'/invite2.html')
 
-print(test)
+def run(filename):
+    test = read_html(os.path.join(PATH,filename))
+    print(test)
+    response = json.loads(parse(test))
+    print(response)
+    print(' ')
+    return response
 
-response = parse(test)
-response = json.loads(response)
 
-print(type(response))
-print(response)
-
+run('add_email.html')
+run('first_party_authentication.html')
+run('invite.html')
+run('invite2.html')
+run('third_party_authenticate.html')
+run('verify.html')
 
 
 
