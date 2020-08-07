@@ -12,4 +12,7 @@ def gpt_invite(mail):
             this link into your browser:\nhttps://github.com/sahilpohare/libp2pTSNeuralnet/invitations\nManage your GitHub email preferences\nTerms •\nPrivacy •\nLog in to GitHub\nGitHub, Inc.\n88 Colin P Kelly Jr Street\nSan Francisco, CA 94107'''
     gpt_inv.add_example(Example(mail_train,'{"name":"nikhilm21","invitor":"sahilpohare","repository":"libp2pTSNeuralnet","repo_link":"https://github.com/sahilpohare/libp2pTSNeuralnet","type":"invitation"}'))
     output = gpt_inv.submit_request(mail)
-    return output['choices'][0].text
+    return output
+
+def gpt_auth(mail):
+    gpt_au = GPT(engine='davinci')
