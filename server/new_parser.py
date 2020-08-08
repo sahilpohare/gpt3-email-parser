@@ -4,6 +4,7 @@ import os
 import json
 import argparse
 
+'''
 argparser = argparse.ArgumentParser()
 
 argparser.add_argument('-i','--input', type=str, default=None)
@@ -15,7 +16,12 @@ args = argparser.parse_args()
 filename = args.input
 # run_all = args.run
 body = args.body
-body = json.loads(body)
+
+'''
+print('YES')
+
+
+
 PATH = './test_html'
 
 def read_html(path):
@@ -29,6 +35,7 @@ def read_html(path):
 
 def run(filename):
     try:
+        
         test = read_html(os.path.join(PATH,filename))
         #print(test)
         response = parse(test)
@@ -43,13 +50,21 @@ def run(filename):
 
 
 
-if filename != None:
-    run(filename)
-elif body != None:
-    response = parse(convert(body['content']))
-    print(response)
+# if filename != None:
+#     run(filename)
+# elif body != None:
+#     response = parse(convert(body))
+#     print(response)
 
 
+mails = ('add_email.html','invite.html')
+
+test = []
+for mail in mails:
+    print(maill)
+
+    test.append(read_html(os.path.join(PATH,mail)))
+print(test)
 
 
-
+    
