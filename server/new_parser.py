@@ -4,7 +4,6 @@ import os
 import json
 import argparse
 
-
 argparser = argparse.ArgumentParser()
 
 argparser.add_argument('-i','--input', type=str, default=None)
@@ -16,8 +15,7 @@ args = argparser.parse_args()
 filename = args.input
 # run_all = args.run
 body = args.body
-
-
+body = json.loads(body)
 PATH = './test_html'
 
 def read_html(path):
@@ -48,7 +46,7 @@ def run(filename):
 if filename != None:
     run(filename)
 elif body != None:
-    response = parse(convert(body))
+    response = parse(convert(body['content']))
     print(response)
 
 

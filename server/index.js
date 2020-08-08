@@ -8,18 +8,17 @@ app.use(bodyParser.urlencoded(),bodyParser.json());
 app.get('/',(req,res)=>res.send('Mail Parse'))
 
 app.get('/parse',async (req,res)=>{
-    try {
-        await PythonShell.run('./new_parser.py',{
-            args : [
-                '-b',
-                JSON.stringify(req.body)
-            ],
-        }, (err, result) =>{
-            res.json(JSON.parse(result));
-        });
-    } catch (e){
-        console.log(e);
-    }
+    let stringy = JSON.stringify(req.body)
+    PythonShell.run('./new_parser.py',{
+        args : [
+            '-b',
+             stringy
+        ],
+    }, (err, result) =>{
+        console.log(result);
+        res.send(result);
+    });
+    
 })
 
 app.listen(3200,console.log('Jingling on 3200'))
