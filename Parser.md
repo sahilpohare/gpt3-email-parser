@@ -1,5 +1,3 @@
-# GPT3 - Github mail parser
-
 ## Dependecies
 * openai
 * BeautifulSoup4
