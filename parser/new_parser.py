@@ -1,6 +1,5 @@
 from converter import convert
 from gpt_train import parse
-from gpt_buffer import GPT as GPTbuffer
 import os 
 import json
 import argparse
