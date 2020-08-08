@@ -1,5 +1,6 @@
 from converter import convert
 from gpt_train import parse
+from gpt_buffer import GPT as GPTbuffer
 import os 
 import json
 import argparse
@@ -32,7 +33,7 @@ def read_html(path):
 def run(filename):
     try:
         test = read_html(os.path.join(PATH,filename))
-        print(test)
+        # print(test)
         response = json.loads(parse(test))
         print(response)
         print(' ')
@@ -52,6 +53,7 @@ elif body != None:
     print(response)
 
 
+# mails = ('add_email.html','invite.html')
 
 
 
