@@ -15,8 +15,9 @@ app.get('/parse',async (req,res)=>{
              stringy
         ],
     }, (err, result) =>{
-        console.log(result);
-        res.send(result);
+        res.header('Content-Type','application/json');
+        result = result.map(val=>JSON.parse(val));
+        res.send(JSON.stringify(result));
     });
     
 })
