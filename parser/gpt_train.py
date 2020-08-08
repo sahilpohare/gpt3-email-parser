@@ -21,7 +21,8 @@ train_mails = {
     'Auth.html':'resp1',
     'email_added.html':'resp4',
     'invite1.html':'resp2',
-    'verification.html':'resp3'
+    'verification.html':'resp3',
+    'inviteTrello.html':'resp5'
 }
 
 
@@ -29,7 +30,8 @@ resp = {
     'resp1':'{"Type":"Auth", "name":"rahul81", "application":"Dockship", "link":"https://github.com/settings/connections/applications/ccb42a8e19665bcd148e", "From":"The GitHub Team"}',
     'resp2':'{"Type":"Invitation", "invitor":"rahul81", "repo":"GPT3parser", "repolink":"https://github.com/rahul81/GPT3parser", "For":"sahilpohare@gmail.com"}',
     'resp3':'{"Type":"Verfication", "name":"rahul81", "Device":"Linux", "verification_code":"849680", "From":"The GitHub Team"}',
-    'resp4':'{"Type":"email_added", "name":"rahul81", "new_email":"rahul.das@adypu.edu.in", "From":"The GitHub Team"}'
+    'resp4':'{"Type":"email_added", "name":"rahul81", "new_email":"rahul.das@adypu.edu.in", "From":"The GitHub Team"}',
+    'resp5':'{"Type":"Invite", "inviter":"Rahul D", "board":"Turista-SIH2020","From":"Trello"}'
 }
 
 
