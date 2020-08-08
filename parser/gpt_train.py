@@ -22,13 +22,9 @@ train_mails = {
     'email_added.html':'resp4',
     'invite1.html':'resp2',
     'verification.html':'resp3',
-<<<<<<< HEAD
     'verify_email.html':'resp5',
     'pass_reset_conf.html':'resp6',
     'inviteTrello.html':'resp7',
-=======
-    'inviteTrello.html':'resp5'
->>>>>>> 642a9edd9e23939f3769115e38e5d8d46ad15950
 }
 
 
@@ -37,13 +33,9 @@ resp = {
     'resp2':'{"Type":"Invitation", "invitor":"rahul81", "repo":"GPT3parser", "repolink":"https://github.com/rahul81/GPT3parser", "For":"sahilpohare@gmail.com"}',
     'resp3':'{"Type":"Verfication", "name":"rahul81", "Device":"Linux", "verification_code":"849680", "From":"The GitHub Team"}',
     'resp4':'{"Type":"email_added", "name":"rahul81", "new_email":"rahul.das@adypu.edu.in", "From":"The GitHub Team"}',
-<<<<<<< HEAD
     'resp5':'{"Type":"email_verify", "name":"rahul81", "email":"rahuldas.rr81@gmail.com", "From":"GitHub" }',
     'resp6':'{"Type":"password_reset_confirmation", "name":"rahul81", "email":"rahuldas.rr81@gmail.com"}',
     'resp7':'{"Type":"Invite", "inviter":"Rahul D", "board":"Turista-SIH2020","From":"Trello"}',
-=======
-    'resp5':'{"Type":"Invite", "inviter":"Rahul D", "board":"Turista-SIH2020","From":"Trello"}'
->>>>>>> 642a9edd9e23939f3769115e38e5d8d46ad15950
 }
 
 
