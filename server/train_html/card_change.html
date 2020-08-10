@@ -1,0 +1,605 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.or=
+g/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns=3D"http://www.w3.org/1999/x=
+html"> <head> <meta http-equiv=3D"Content-Type" content=3D"text/html; chars=
+et=3Dutf-8"> <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+
+ <style type=3D"text/css">
+
+ /********************************************** * Ink v1.0.5 - Copyright 2=
+013 ZURB Inc * **********************************************/
+
+ /* Client-specific Styles & Reset */
+
+ #outlook a { padding:0; }=20
+
+ body{ width:100% !important; min-width: 100%; -webkit-text-size-adjust:100=
+%; -ms-text-size-adjust:100%; margin:0; padding:0; }
+
+ .ExternalClass { width:100%; }=20
+
+ .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font=
+, .ExternalClass td, .ExternalClass div { line-height: 100%; }=20
+
+ #backgroundTable { margin:0; padding:0; width:100% !important; line-height=
+: 100% !important; }
+
+ img { outline:none; text-decoration:none; -ms-interpolation-mode: bicubic;=
+ width: auto; max-width: 100%; float: left; clear: both; display: block; }
+
+ center { width: 100%; }
+
+ a img { border: none; }
+
+ p { margin: 0 0 0 10px; }
+
+ table { border-spacing: 0; border-collapse: collapse; }
+
+ td { word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hy=
+phens: auto; border-collapse: collapse !important; }
+
+ table, tr, td { padding: 0; vertical-align: top; text-align: left; }
+
+ hr { color: #d9d9d9; background-color: #d9d9d9; height: 1px; border: none;=
+ }
+
+ /* Responsive Grid */
+
+ table.body { height: 100% !important; width: 100% !important; padding: 0; =
+margin: 0; }
+
+ table.container { width: 580px; margin: 0 auto; text-align: inherit; }
+
+ table.row { padding: 0px; width: 100%; position: relative; }
+
+ table.container table.row { display: block; }
+
+ td.wrapper { padding: 10px 20px 0px 0px; position: relative; }
+
+ table.columns, table.column { margin: 0 auto; }
+
+ table.columns td, table.column td { padding: 0px 0px 10px; }
+
+ table.columns td.sub-columns, table.column td.sub-columns, table.columns t=
+d.sub-column, table.column td.sub-column { padding-right: 10px; }
+
+ td.sub-column, td.sub-columns { min-width: 0px; }
+
+ table.row td.last, table.container td.last { padding-right: 0px; }
+
+ table.one { width: 30px; } table.two { width: 80px; } table.three { width:=
+ 130px; } table.four { width: 180px; } table.five { width: 230px; } table.s=
+ix { width: 280px; } table.seven { width: 330px; } table.eight { width: 380=
+px; } table.nine { width: 430px; } table.ten { width: 480px; } table.eleven=
+ { width: 530px; } table.twelve { width: 580px; }
+
+ table.one center { min-width: 30px; } table.two center { min-width: 80px; =
+} table.three center { min-width: 130px; } table.four center { min-width: 1=
+80px; } table.five center { min-width: 230px; } table.six center { min-widt=
+h: 280px; } table.seven center { min-width: 330px; } table.eight center { m=
+in-width: 380px; } table.nine center { min-width: 430px; } table.ten center=
+ { min-width: 480px; } table.eleven center { min-width: 530px; } table.twel=
+ve center { min-width: 580px; }
+
+ table.one .panel center { min-width: 10px; } table.two .panel center { min=
+-width: 60px; } table.three .panel center { min-width: 110px; } table.four =
+.panel center { min-width: 160px; } table.five .panel center { min-width: 2=
+10px; } table.six .panel center { min-width: 260px; } table.seven .panel ce=
+nter { min-width: 310px; } table.eight .panel center { min-width: 360px; } =
+table.nine .panel center { min-width: 410px; } table.ten .panel center { mi=
+n-width: 460px; } table.eleven .panel center { min-width: 510px; } table.tw=
+elve .panel center { min-width: 560px; }
+
+ .body .columns td.one, .body .column td.one { width: 8.333333%; } .body .c=
+olumns td.two, .body .column td.two { width: 16.666666%; } .body .columns t=
+d.three, .body .column td.three { width: 25%; } .body .columns td.four, .bo=
+dy .column td.four { width: 33.333333%; } .body .columns td.five, .body .co=
+lumn td.five { width: 41.666666%; } .body .columns td.six, .body .column td=
+.six { width: 50%; } .body .columns td.seven, .body .column td.seven { widt=
+h: 58.333333%; } .body .columns td.eight, .body .column td.eight { width: 6=
+6.666666%; } .body .columns td.nine, .body .column td.nine { width: 75%; } =
+.body .columns td.ten, .body .column td.ten { width: 83.333333%; } .body .c=
+olumns td.eleven, .body .column td.eleven { width: 91.666666%; } .body .col=
+umns td.twelve, .body .column td.twelve { width: 100%; }
+
+ td.offset-by-one { padding-left: 50px; } td.offset-by-two { padding-left: =
+100px; } td.offset-by-three { padding-left: 150px; } td.offset-by-four { pa=
+dding-left: 200px; } td.offset-by-five { padding-left: 250px; } td.offset-b=
+y-six { padding-left: 300px; } td.offset-by-seven { padding-left: 350px; } =
+td.offset-by-eight { padding-left: 400px; } td.offset-by-nine { padding-lef=
+t: 450px; } td.offset-by-ten { padding-left: 500px; } td.offset-by-eleven {=
+ padding-left: 550px; }
+
+ td.expander { visibility: hidden; width: 0px; padding: 0 !important; }
+
+ table.columns .text-pad, table.column .text-pad { padding-left: 10px; padd=
+ing-right: 10px; }
+
+ table.columns .left-text-pad, table.columns .text-pad-left, table.column .=
+left-text-pad, table.column .text-pad-left { padding-left: 10px; }
+
+ table.columns .right-text-pad, table.columns .text-pad-right, table.column=
+ .right-text-pad, table.column .text-pad-right { padding-right: 10px; }
+
+ /* Block Grid */
+
+ .block-grid { width: 100%; max-width: 580px; }
+
+ .block-grid td { display: inline-block; padding:10px; }
+
+ .two-up td { width:270px; }
+
+ .three-up td { width:173px; }
+
+ .four-up td { width:125px; }
+
+ .five-up td { width:96px; }
+
+ .six-up td { width:76px; }
+
+ .seven-up td { width:62px; }
+
+ .eight-up td { width:52px; }
+
+ /* Alignment & Visibility Classes */
+
+ table.center, td.center { text-align: center; }
+
+ h1.center, h2.center, h3.center, h4.center, h5.center, h6.center { text-al=
+ign: center; }
+
+ span.center { display: block; width: 100%; text-align: center; }
+
+ img.center { margin: 0 auto; float: none; }
+
+ .show-for-small, .hide-for-desktop { display: none; }
+
+ /* Typography */
+
+ body, table.body, h1, h2, h3, h4, h5, h6, p, td { color: #4d4d4d; font-fam=
+ily: "Helvetica", "Arial", sans-serif; font-weight: normal; padding: 0; mar=
+gin: 0; text-align: left; line-height: 1.3; }
+
+ h1, h2, h3, h4, h5, h6 { word-break: normal; margin-bottom: 12px; }
+
+ h1 {font-size: 40px;} h2 {font-size: 36px;} h3 {font-size: 32px;} h4 {font=
+-size: 28px;} h5 {font-size: 24px;} h6 {font-size: 20px;} body, table.body,=
+ p, td {font-size: 14px;line-height:19px;}
+
+ p.lead, p.lede, p.leed { font-size: 18px; line-height:21px; }
+
+ p { margin-bottom: 10px; }
+
+ small { font-size: 10px; }
+
+ a { color: #3685B3; text-decoration: underline; }
+
+ a:active { color: #265F80; }
+
+ a:visited { color: #3685B3; }
+
+ a:hover { color: #265F80; }
+
+ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #3685B3; }
+
+ h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:acti=
+ve { color: #3685B3 !important; }=20
+
+ h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a=
+:visited { color: #3685B3 !important; }=20
+
+ /* Panels */
+
+ .panel { background: #f2f2f2; border: 1px solid #d9d9d9; padding: 10px !im=
+portant; }
+
+ .sub-grid table { width: 100%; }
+
+ .sub-grid td.sub-columns { padding-bottom: 0; }
+
+ /* Buttons */
+
+ table.button, table.tiny-button, table.small-button, table.medium-button, =
+table.large-button { width: 100%; overflow: hidden; }
+
+ table.button td, table.tiny-button td, table.small-button td, table.medium=
+-button td, table.large-button td { display: block; width: auto !important;=
+ text-align: center; background: #2ba6cb; border: 1px solid #2284a1; color:=
+ #ffffff; padding: 8px 0; }
+
+ table.tiny-button td { padding: 5px 0 4px; }
+
+ table.small-button td { padding: 8px 0 7px; }
+
+ table.medium-button td { padding: 12px 0 10px; }
+
+ table.large-button td { padding: 21px 0 18px; }
+
+ table.button td a, table.tiny-button td a, table.small-button td a, table.=
+medium-button td a, table.large-button td a { font-weight: bold; text-decor=
+ation: none; font-family: Helvetica, Arial, sans-serif; color: #ffffff; fon=
+t-size: 16px; }
+
+ table.tiny-button td a { font-size: 12px; font-weight: normal; }
+
+ table.small-button td a { font-size: 16px; }
+
+ table.medium-button td a { font-size: 20px; }
+
+ table.large-button td a { font-size: 24px; }
+
+ table.button:hover td, table.button:visited td, table.button:active td { b=
+ackground: #2795b6 !important; }
+
+ table.button:hover td a, table.button:visited td a, table.button:active td=
+ a { color: #fff !important; }
+
+ table.button:hover td, table.tiny-button:hover td, table.small-button:hove=
+r td, table.medium-button:hover td, table.large-button:hover td { backgroun=
+d: #2795b6 !important; }
+
+ table.button:hover td a, table.button:active td a, table.button td a:visit=
+ed, table.tiny-button:hover td a, table.tiny-button:active td a, table.tiny=
+-button td a:visited, table.small-button:hover td a, table.small-button:act=
+ive td a, table.small-button td a:visited, table.medium-button:hover td a, =
+table.medium-button:active td a, table.medium-button td a:visited, table.la=
+rge-button:hover td a, table.large-button:active td a, table.large-button t=
+d a:visited { color: #ffffff !important; }
+
+ table.secondary td { background: #e9e9e9; border-color: #d0d0d0; color: #5=
+55; }
+
+ table.secondary td a { color: #555; }
+
+ table.secondary:hover td { background: #d0d0d0 !important; color: #555; }
+
+ table.secondary:hover td a, table.secondary td a:visited, table.secondary:=
+active td a { color: #555 !important; }
+
+ table.success td { background: #5da423; border-color: #457a1a; }
+
+ table.success:hover td { background: #457a1a !important; }
+
+ table.alert td { background: #c60f13; border-color: #970b0e; }
+
+ table.alert:hover td { background: #970b0e !important; }
+
+ table.radius td { -webkit-border-radius: 3px; -moz-border-radius: 3px; bor=
+der-radius: 3px; }
+
+ table.round td { -webkit-border-radius: 500px; -moz-border-radius: 500px; =
+border-radius: 500px; }
+
+ /* Outlook First */
+
+ body.outlook p { display: inline !important; }
+
+ /* Media Queries */
+
+ @media only screen and (max-width: 600px) {
+
+ table[class=3D"body"] img { width: auto; height: auto; }
+
+ table[class=3D"body"] center { min-width: 0 !important; }
+
+ table[class=3D"body"] .container { width: 95% !important; }
+
+ table[class=3D"body"] .row { width: 100% !important; display: block !impor=
+tant; }
+
+ table[class=3D"body"] .wrapper { display: block !important; padding-right:=
+ 0 !important; }
+
+ table[class=3D"body"] .columns, table[class=3D"body"] .column { table-layo=
+ut: fixed !important; float: none !important; width: 100% !important; paddi=
+ng-right: 0px !important; padding-left: 0px !important; display: block !imp=
+ortant; }
+
+ table[class=3D"body"] .wrapper.first .columns, table[class=3D"body"] .wrap=
+per.first .column { display: table !important; }
+
+ table[class=3D"body"] table.columns td, table[class=3D"body"] table.column=
+ td { width: 100% !important; }
+
+ table[class=3D"body"] .columns td.one, table[class=3D"body"] .column td.on=
+e { width: 8.333333% !important; } table[class=3D"body"] .columns td.two, t=
+able[class=3D"body"] .column td.two { width: 16.666666% !important; } table=
+[class=3D"body"] .columns td.three, table[class=3D"body"] .column td.three =
+{ width: 25% !important; } table[class=3D"body"] .columns td.four, table[cl=
+ass=3D"body"] .column td.four { width: 33.333333% !important; } table[class=
+=3D"body"] .columns td.five, table[class=3D"body"] .column td.five { width:=
+ 41.666666% !important; } table[class=3D"body"] .columns td.six, table[clas=
+s=3D"body"] .column td.six { width: 50% !important; } table[class=3D"body"]=
+ .columns td.seven, table[class=3D"body"] .column td.seven { width: 58.3333=
+33% !important; } table[class=3D"body"] .columns td.eight, table[class=3D"b=
+ody"] .column td.eight { width: 66.666666% !important; } table[class=3D"bod=
+y"] .columns td.nine, table[class=3D"body"] .column td.nine { width: 75% !i=
+mportant; } table[class=3D"body"] .columns td.ten, table[class=3D"body"] .c=
+olumn td.ten { width: 83.333333% !important; } table[class=3D"body"] .colum=
+ns td.eleven, table[class=3D"body"] .column td.eleven { width: 91.666666% !=
+important; } table[class=3D"body"] .columns td.twelve, table[class=3D"body"=
+] .column td.twelve { width: 100% !important; }
+
+ table[class=3D"body"] td.offset-by-one, table[class=3D"body"] td.offset-by=
+-two, table[class=3D"body"] td.offset-by-three, table[class=3D"body"] td.of=
+fset-by-four, table[class=3D"body"] td.offset-by-five, table[class=3D"body"=
+] td.offset-by-six, table[class=3D"body"] td.offset-by-seven, table[class=
+=3D"body"] td.offset-by-eight, table[class=3D"body"] td.offset-by-nine, tab=
+le[class=3D"body"] td.offset-by-ten, table[class=3D"body"] td.offset-by-ele=
+ven { padding-left: 0 !important; }
+
+ table[class=3D"body"] table.columns td.expander { width: 1px !important; }
+
+ table[class=3D"body"] .right-text-pad, table[class=3D"body"] .text-pad-rig=
+ht { padding-left: 10px !important; }
+
+ table[class=3D"body"] .left-text-pad, table[class=3D"body"] .text-pad-left=
+ { padding-right: 10px !important; }
+
+ table[class=3D"body"] .hide-for-small, table[class=3D"body"] .show-for-des=
+ktop { display: none !important; }
+
+ table[class=3D"body"] .show-for-small, table[class=3D"body"] .hide-for-des=
+ktop { display: inherit !important; } }
+
+</style>
+
+ <style type=3D"text/css">
+
+ /* Trello Block */
+
+ .trello-block { width: 100%; text-align: inherit; }
+
+ .trello-block-single-column { display: block; margin: 0 auto; max-width: 5=
+80px; padding: 12px 16px; }
+
+ /* Trello Block Backgrounds */
+
+ .trello-block-background--gray { background-color: #F0F0F0; }
+
+ .trello-block-background--trello-blue { background-color: #0079BF; color: =
+#fff; }
+
+ /* Header */
+
+ .header-logo-image { height: 37px; max-height: 37px; max-width: 122px; wid=
+th: 122px; }
+
+ /* Blog Post Link */
+
+ .trello-block--blog-post p { text-align: center; }
+
+ /* Code */
+
+ code { white-space: pre-wrap; }
+
+ /* Footer */
+
+ .trello-block--footer p { color: #9B9B9B; text-align: center; }
+
+ .trello-block--footer a, .trello-block--footer a:visited, .trello-block--f=
+ooter a:active { color: #9B9B9B; text-decoration: underline; }
+
+ .trello-block--footer a:hover { color: #4d4d4d; }
+
+ /* Notifications */
+
+ .phenom { margin: 12px 0; }
+
+ .phenom-creator { width: 38px; }
+
+ .phenom-creator-avatar { -webkit-border-radius: 3px; border-radius: 3px; h=
+eight: 30px; width: 30px; }
+
+ .phenom-member-initials { display: block; font-size: 12px; font-weight: bo=
+ld; height: 30px; line-height: 30px; width: 85%; text-align: center; backgr=
+ound-color: #d6dadc; }
+
+ .phenom-details { /* max-width: 480px; */ }
+
+ .phenom-details-comment { background-color: #fff; border: 1px solid #DBDBD=
+B; -webkit-border-radius: 3px; border-radius: 3px; display: block; margin: =
+6px 0; padding: 10px 12px 0 12px; }
+
+ /* Button */
+
+ a.button { background: linear-gradient(to bottom, #3FBF3F 0%, #37A637 100%=
+); border-bottom: 2px solid #008000; border-radius: 3px; color: #fff; displ=
+ay: inline-block; font-weight: bold; font-size: 18px; margin: 12px margin; =
+padding: 16px 24px; text-decoration: none; }
+
+ a.button:hover { background: linear-gradient(to bottom, #37A637 0%, #2E8C2=
+E 100%); }
+
+ /* Responsivication */
+
+ @media only screen and (min-width: 580px) {
+
+ .trello-block-single-column { width: 560px !important; }
+
+ }
+
+ @media only screen and (max-width: 559px) {
+
+ .trello-block-single-column { width: 90% !important; padding: 12px 0; }
+
+ }
+
+</style>
+
+ </head> <body style=3D"min-width: 100%; -webkit-text-size-adjust: 100%; -m=
+s-text-size-adjust: 100%; color: #4d4d4d; font-family: 'Helvetica', 'Arial'=
+, sans-serif; font-weight: normal; padding: 0; margin: 0; text-align: left;=
+ font-size: 14px; line-height: 19px; width: 100%;"> <table class=3D"body" s=
+tyle=3D"border-spacing: 0; border-collapse: collapse; vertical-align: top; =
+color: #4d4d4d; font-family: 'Helvetica', 'Arial', sans-serif; font-weight:=
+ normal; padding: 0; margin: 0; text-align: left; font-size: 14px; line-hei=
+ght: 19px; height: 100%; width: 100%;" width=3D"100%" height=3D"100%" valig=
+n=3D"top" align=3D"left"> <tr style=3D"padding: 0; vertical-align: top; tex=
+t-align: left;" valign=3D"top" align=3D"left"> <td class=3D"center" align=
+=3D"center" valign=3D"top" style=3D"word-break: break-word; -webkit-hyphens=
+: auto; -moz-hyphens: auto; hyphens: auto; vertical-align: top; color: #4d4=
+d4d; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; pa=
+dding: 0; margin: 0; font-size: 14px; line-height: 19px; text-align: center=
+; border-collapse: collapse;"> <center style=3D"width: 100%;"> <!-- Email C=
+ontent -->
+
+ <!--[if (gte mso 9)|(IE)]> <table width=3D"560" align=3D"center"> <tr> <td=
+> <![endif]-->
+
+ <!-- Header -->
+
+<table class=3D"trello-block trello-block-background--trello-blue" style=3D=
+"border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: =
+top; width: 100%; text-align: inherit; background-color: #0079BF; color: #f=
+ff;" width=3D"100%" valign=3D"top" align=3D"inherit" bgcolor=3D"#0079BF"> <=
+tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"t=
+op" align=3D"left"> <td style=3D"word-break: break-word; -webkit-hyphens: a=
+uto; -moz-hyphens: auto; hyphens: auto; vertical-align: top; color: #4d4d4d=
+; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; paddi=
+ng: 0; margin: 0; text-align: left; font-size: 14px; line-height: 19px; bor=
+der-collapse: collapse;" valign=3D"top" align=3D"left">
+
+ <div class=3D"trello-block-single-column center" style=3D"display: block; =
+margin: 0 auto; max-width: 580px; padding: 12px 16px;">
+
+ <img class=3D"header-logo-image center" height=3D"37" width=3D"122" src=3D=
+"https://d2k1ftgv7pobq7.cloudfront.net/images/email-header-logo-white-v2.pn=
+g" alt=3D"Trello Logo" title=3D"Trello Logo" style=3D"outline: none; text-d=
+ecoration: none; -ms-interpolation-mode: bicubic; clear: both; display: blo=
+ck; height: 37px; max-height: 37px; max-width: 122px; width: 122px; margin:=
+ 0 auto; float: none;">
+
+ </div>
+
+ </td> </tr> </table>
+
+ <table class=3D"trello-block trello-block-background--gray" style=3D"borde=
+r-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; w=
+idth: 100%; text-align: inherit; background-color: #F0F0F0;" width=3D"100%"=
+ valign=3D"top" align=3D"inherit" bgcolor=3D"#F0F0F0"> <tr style=3D"padding=
+: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left">=
+ <td style=3D"word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: =
+auto; hyphens: auto; vertical-align: top; color: #4d4d4d; font-family: 'Hel=
+vetica', 'Arial', sans-serif; font-weight: normal; margin: 0; text-align: l=
+eft; font-size: 14px; line-height: 19px; padding: 16px 0; border-collapse: =
+collapse;" valign=3D"top" align=3D"left">
+
+ <div class=3D"trello-block-single-column" style=3D"display: block; margin:=
+ 0 auto; max-width: 580px; padding: 12px 16px;">
+
+ <h6 style=3D"color: #4d4d4d; font-family: 'Helvetica', 'Arial', sans-serif=
+; font-weight: normal; padding: 0; margin: 0; text-align: left; line-height=
+: 1.3; word-break: normal; margin-bottom: 12px; font-size: 20px;">Here=E2=
+=80=99s what you missed=E2=80=A6</h6>
+
+ <table width=3D"100%" class=3D"phenom" style=3D"border-spacing: 0; border-=
+collapse: collapse; padding: 0; vertical-align: top; text-align: left; marg=
+in: 12px 0;" valign=3D"top" align=3D"left"> <tr style=3D"padding: 0; vertic=
+al-align: top; text-align: left;" valign=3D"top" align=3D"left">
+
+ <td class=3D"phenom-creator" style=3D"word-break: break-word; -webkit-hyph=
+ens: auto; -moz-hyphens: auto; hyphens: auto; vertical-align: top; color: #=
+4d4d4d; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal;=
+ padding: 0; margin: 0; text-align: left; font-size: 14px; line-height: 19p=
+x; width: 38px; border-collapse: collapse;" width=3D"38" valign=3D"top" ali=
+gn=3D"left"> <img class=3D"phenom-creator-avatar" src=3D"https://trello-mem=
+bers.s3.amazonaws.com/5cdc78c86c648d7ca1ecf5a4/1f422bc9f38989d5b40707c797cd=
+28de/30.png" height=3D"30" width=3D"30" style=3D"outline: none; text-decora=
+tion: none; -ms-interpolation-mode: bicubic; max-width: 100%; float: left; =
+clear: both; display: block; -webkit-border-radius: 3px; border-radius: 3px=
+; height: 30px; width: 30px;">
+
+ </td> <td class=3D"phenom-details" style=3D"word-break: break-word; -webki=
+t-hyphens: auto; -moz-hyphens: auto; hyphens: auto; vertical-align: top; co=
+lor: #4d4d4d; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: n=
+ormal; padding: 0; margin: 0; text-align: left; font-size: 14px; line-heigh=
+t: 19px; border-collapse: collapse;" valign=3D"top" align=3D"left"> <strong=
+>leshokunin</strong> added you to the card <a href=3D"https://trello.com/c/=
+zvdLOYIC/7-logo-for-docs" style=3D"color: #3685B3; text-decoration: underli=
+ne;">Logo for docs</a> on <a href=3D"https://trello.com/b/ypYPPQTH/mailscri=
+pt-vs-code-extension" style=3D"color: #3685B3; text-decoration: underline;"=
+>MailScript VS Code extension</a> <p style=3D"color: #4d4d4d; font-family: =
+'Helvetica', 'Arial', sans-serif; font-weight: normal; padding: 0; margin: =
+0; text-align: left; font-size: 14px; line-height: 19px; margin-bottom: 10p=
+x;"> <a href=3D"mailto:sahilpohare+2qqyfw1segyt5ih27rw+2uqd86q0mb8bzrkmcdh+=
+10rwcst7pu@boards.trello.com?subject=3DRe%3A%20Logo%20for%20docs" target=3D=
+"_blank" style=3D"color: #3685B3; text-decoration: underline;">Reply via em=
+ail</a> </p> </td>
+
+ </tr> </table>
+
+ </div>
+
+ </td> </tr> </table> <!-- End gray background -->
+
+ <script type=3D"application/ld+json"> {"@context":"http:\u002f\u002fschema=
+.org","@type":"EmailMessage","potentialAction":{"@type":"ViewAction","targe=
+t":"https:\u002f\u002ftrello.com\u002fc\u002fzvdLOYIC?utm_medium=3Demail&ut=
+m_source=3Dnotification&utm_campaign=3Dnotification&utm_content=3Dgoogle_in=
+box","name":"Open Card in Trello"},"description":"Trello Board"} </script>
+
+ <!-- Blog Post Link -->
+
+<table class=3D"trello-block trello-block--blog-post" style=3D"border-spaci=
+ng: 0; border-collapse: collapse; padding: 0; vertical-align: top; width: 1=
+00%; text-align: inherit;" width=3D"100%" valign=3D"top" align=3D"inherit">=
+ <tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D=
+"top" align=3D"left"> <td style=3D"word-break: break-word; -webkit-hyphens:=
+ auto; -moz-hyphens: auto; hyphens: auto; vertical-align: top; color: #4d4d=
+4d; font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; pad=
+ding: 0; margin: 0; text-align: left; font-size: 14px; line-height: 19px; b=
+order-collapse: collapse;" valign=3D"top" align=3D"left">
+
+ <div class=3D"trello-block-single-column center" style=3D"display: block; =
+margin: 0 auto; max-width: 580px; padding: 12px 16px;">
+
+ <p style=3D"color: #4d4d4d; font-family: 'Helvetica', 'Arial', sans-serif;=
+ font-weight: normal; padding: 0; margin: 0; font-size: 14px; line-height: =
+19px; margin-bottom: 10px; text-align: center;"><a href=3D"https://trello.c=
+om/butler-automation?utm_source=3Dalert-email&utm_medium=3Demail&utm_campai=
+gn=3Dtrello_butler-automation-lp" style=3D"color: #3685B3; text-decoration:=
+ underline;">=F0=9F=A4=96 Learn how Butler automations can manage your task=
+s so you have more time </a></p> </div>
+
+ </td> </tr> </table>
+
+ <!-- Footer -->
+
+<table class=3D"trello-block trello-block--footer" style=3D"border-spacing:=
+ 0; border-collapse: collapse; padding: 0; vertical-align: top; width: 100%=
+; text-align: inherit;" width=3D"100%" valign=3D"top" align=3D"inherit"> <t=
+r style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"to=
+p" align=3D"left"> <td style=3D"word-break: break-word; -webkit-hyphens: au=
+to; -moz-hyphens: auto; hyphens: auto; vertical-align: top; color: #4d4d4d;=
+ font-family: 'Helvetica', 'Arial', sans-serif; font-weight: normal; paddin=
+g: 0; margin: 0; text-align: left; font-size: 14px; line-height: 19px; bord=
+er-collapse: collapse;" valign=3D"top" align=3D"left">
+
+ <div class=3D"trello-block-single-column center" style=3D"display: block; =
+margin: 0 auto; max-width: 580px; padding: 12px 16px;">
+
+ <p style=3D"font-family: 'Helvetica', 'Arial', sans-serif; font-weight: no=
+rmal; padding: 0; margin: 0; font-size: 14px; line-height: 19px; margin-bot=
+tom: 10px; color: #9B9B9B; text-align: center;"><a href=3D"https://trello.c=
+om/my/account" style=3D"color: #9B9B9B; text-decoration: underline;">Change=
+ email preferences.</a></p>
+
+ <p style=3D"font-family: 'Helvetica', 'Arial', sans-serif; font-weight: no=
+rmal; padding: 0; margin: 0; font-size: 14px; line-height: 19px; margin-bot=
+tom: 10px; color: #9B9B9B; text-align: center;">Get Trello for <a href=3D"h=
+ttps://itunes.apple.com/us/app/trello-organize-anything/id461504587">iPhone=
+ and iPad</a>, <a href=3D"https://play.google.com/store/apps/details?id=3Dc=
+om.trello">Android</a>, and <a href=3D"https://trello.com/platforms">more</=
+a>.</p>
+
+ </div>
+
+ </td> </tr> </table>
+
+ <!--[if (gte mso 9)|(IE)]> </td> </tr> </table> <![endif]-->
+
+ <!-- / Email Content --> </center> </td> </tr> </table>=20
+<img border=3D"0" width=3D"1" height=3D"1" alt=3D"" src=3D"http://sptrack.t=
+rello.com/q/4elRUxd7VqMi58ZXp7bLPQ~~/AAAAAQA~/RgRg_hv3PlcLYXRsYXNzaWFudXNCC=
+gBHd-gcX0h4uiZSFXNhaGlscG9oYXJlQGdtYWlsLmNvbVgEAAAAAw~~">
+</body> </html>
