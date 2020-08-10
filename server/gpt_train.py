@@ -24,7 +24,8 @@ train_mails = {
     'verification.html':'resp3',
     'verify_email.html':'resp5',
     'pass_reset_conf.html':'resp6',
-    'inviteTrello.html':'resp7',
+#     'inviteTrello.html':'resp7',
+    'pullreq.html':'resp8'
 }
 
 
@@ -35,7 +36,8 @@ resp = {
     'resp4':'{"Type":"email_added", "name":"rahul81", "new_email":"rahul.das@adypu.edu.in", "From":"The GitHub Team"}',
     'resp5':'{"Type":"email_verify", "name":"rahul81", "email":"rahuldas.rr81@gmail.com", "From":"GitHub" }',
     'resp6':'{"Type":"password_reset_confirmation", "name":"rahul81", "email":"rahuldas.rr81@gmail.com"}',
-    'resp7':'{"Type":"Invite", "inviter":"Rahul D", "board":"Turista-SIH2020","From":"Trello"}',
+#     'resp7':'{"Type":"Invite", "inviter":"Rahul D", "board":"Turista-SIH2020","From":"Trello"}',
+    'resp8':{"Type":"Pull_Request","repo_link":"https://github.com/nikhilm21/Movie-Recommender/pull/1","patch_links":["https://github.com/nikhilm21/Movie-Recommender/pull/1.patch","https://github.com/nikhilm21/Movie-Recommender/pull/1.diff"]}
 }
 
 
