@@ -4,8 +4,10 @@ from gpt import GPT
 from converter import convert
 import os
 
+
 openai.api_key = 'sk-r5uc6is7lzeluGzpT0DOfYjbeJh7s8WPmMyfhngY'
 PATH = './train_html'
+
 
 def read_html(path):
 
@@ -24,10 +26,11 @@ train_mails = {
     'verification.html':'resp3',
     'verify_email.html':'resp5',
     'pass_reset_conf.html':'resp6',
-#     'inviteTrello.html':'resp7',
-#     'card_change.html':'resp8',
-    'pullreq.html':'resp9'
+    'inviteTrello.html':'resp7',
+    'pullreq.html':'resp9',
 }
+
+
 
 
 resp = {
@@ -37,10 +40,10 @@ resp = {
     'resp4':'{"Type":"email_added", "name":"rahul81", "new_email":"rahul.das@adypu.edu.in", "From":"The GitHub Team"}',
     'resp5':'{"Type":"email_verify", "name":"rahul81", "email":"rahuldas.rr81@gmail.com", "From":"GitHub" }',
     'resp6':'{"Type":"password_reset_confirmation", "name":"rahul81", "email":"rahuldas.rr81@gmail.com"}',
-#     'resp7':'{"Type":"Invite", "inviter":"Rahul D", "board":"Turista-SIH2020","From":"Trello"}',
-#     'resp8':'{"Type":"Notification","inviter":"leshokunin","board":"MailScript VS Code Extension","action":"added you to card","Cardname":"Logo","From":"Trello"}',
-    'resp9':{"Type":"Pull_Request","repo_link":"https://github.com/nikhilm21/Movie-Recommender/pull/1","patch_links":["https://github.com/nikhilm21/Movie-Recommender/pull/1.patch","https://github.com/nikhilm21/Movie-Recommender/pull/1.diff"]}
+    'resp7':'{"Type":"Invite", "inviter":"Rahul D", "board":"Turista-SIH2020","From":"Trello"}',
+    'resp9':'{"Type":"Pull_Request","repo_link":"https://github.com/nikhilm21/Movie-Recommender/pull/1","patch_links":"[https://github.com/nikhilm21/Movie-Recommender/pull/1.patch, https://github.com/nikhilm21/Movie-Recommender/pull/1.diff]"}'
 }
+
 
 
 
@@ -50,8 +53,15 @@ def parse(test):
     for key, val in train_mails.items():
         mail = read_html(os.path.join(PATH,key))
         gpt3.add_example(Example(mail,resp[val]))
+    # print(gpt3.craft_query(test))
 
     output = gpt3.get_top_reply(test).replace('output: ','').strip()
 
     return output
+
+
+
+
+
+
 
