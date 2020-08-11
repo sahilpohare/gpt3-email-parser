@@ -5,65 +5,76 @@
                 "prompt": {
                     "from": [
                         {
-                            "name": "NikhilMishra",
-                            "address": "nikhilMishra@github.com"
+                            "name": "Rahul Das",
+                            "address": "noreply@github.com"
                         }
                     ],
-                    "subject": "Nikhil Says He has a small ****",
-                    "content": "<html><div>Name : Nikhil/div></html>"
+                    "subject": "rahul81 invited you to rahul81/GPT3parser",
+                    "content": "rahul81 invited you to rahul81/GPT3parser @rahul81 has invited you to collaborate on therahul81/GPT3parser repository You can accept or decline this invitation. You can also visit @rahul81 to learn a bit more about them. This invitation will expire in 7 days. View invitation Note: This invitation was intended for sahilpohare@gmail.com. If you were not expecting this invitation, you can ignore\nthis email. If @rahul81 is sending you too many emails, you can block them or report abuse. Getting a 404 error? Make sure you’re signed in as sahilpohare. Button not working? Copy and paste this link into your browser: https://github.com/rahul81/GPT3parser/invitations Manage your GitHub email preferences Terms • Privacy • Log in to GitHub GitHub, Inc. 88 Colin P Kelly Jr Street San Francisco, CA 94107"
                 },
                 "answer": {
-                    "name": "Nikhil"
+                    "Type": "Invitation",
+                    "invitor": "rahul81",
+                    "repo": "GPT3parser",
+                    "repolink": "https://github.com/rahul81/GPT3parser",
+                    "For": "sahilpohare@gmail.com"
                 }
             },
             {
                 "prompt": {
                     "from": [
                         {
-                            "name": "NikhilMishra",
-                            "address": "nikhilMishra@github.com"
+                            "name": "GitHub",
+                            "address": "noreply@github.com"
                         }
                     ],
-                    "subject": "Nikhil Says He has a small ****",
-                    "content": "<html><div>Name : Nikhil/div></html>"
+                    "subject": "[GitHub] A third-party OAuth application has been added to your account",
+                    "content": "Hey rahul81!\n\nA third-party OAuth application (Dockship) with user:email scope was recently authorized to access your account.\nVisit https://github.com/settings/connections/applications/ccb42a8e19665bcd148e for more information.\n\nTo see this and other security events for your account, visit https://github.com/settings/security\n\nIf you run into problems, please contact support by visiting https://github.com/contact\n\nThanks,\nThe GitHub Team\n"
                 },
-                "answer": {
-                    "name": "Nikhil"
-                }
-            }
-        ]
-    },
-    "trello": {
-        "data": [
-            {
-                "prompt": {
-                    "from": [
-                        {
-                            "name": "NikhilMishra",
-                            "address": "nikhilMishra@trello.com"
-                        }
-                    ],
-                    "subject": "Nikhil Says He has a small ****",
-                    "content": "<html><div>Name : Nikhil/div></html>"
-                },
-                "answer": {
-                    "name": "Nikhil"
+                "answer":{
+                    "Type":"Auth",
+                    "name":"rahul81",
+                    "application":"Dockship",
+                    "link":"https://github.com/settings/connections/applications/ccb42a8e19665bcd148e",
+                    "From":"The GitHub Team"
                 }
             },
             {
                 "prompt": {
                     "from": [
                         {
-                            "name": "NikhilMishra",
-                            "address": "nikhilMishra@trello.com"
+                            "name": "GitHub",
+                            "address": "noreply@github.com"
                         }
                     ],
-                    "subject": "Nikhil Says He has a small ****",
-                    "content": "<html><div>Name : Nikhil/div></html>"
+                    "subject": "[GitHub] An email address was added to your account",
+                    "content": "Hey rahul81!\n\nAn email address (rahul.das@adypu.edu.in) was added to your account. Visit https://github.com/settings/emails to review email addresses currently associated with your account.\n\nTo see this and other security events for your account, visit https://github.com/settings/security\n\nIf you run into problems, please contact support by visiting https://github.com/contact\n\nThanks,\nThe GitHub Team"
+                },
+                "answer":{
+                    "Type":"email_added",
+                    "name":"rahul81",
+                    "new_email":"rahul.das@adypu.edu.in",
+                    "From":"The GitHub Team"}
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Rahul Das",
+                            "address": "notifications@github.com"
+                        }
+                    ],
+                    "subject": "[nikhilm21/Movie-Recommender] Update README.md (#1)",
+                    "content": "Pull req test You can view, comment on, or merge this pull request online at: https://github.com/nikhilm21/Movie-Recommender/pull/1 Commit Summary Update README.md File Changes M README.md (2) Patch Links: https://github.com/nikhilm21/Movie-Recommender/pull/1.patch https://github.com/nikhilm21/Movie-Recommender/pull/1.diff —You are receiving this because you are subscribed to this thread.Reply to this email directly, view it on GitHub, or unsubscribe."
                 },
                 "answer": {
-                    "name": "Nikhil"
-                }
+                    "Type":"Pull_Request",
+                    "repo_link":"https://github.com/nikhilm21/Movie-Recommender/pull/1",
+                    "patch_links": [
+                        "https://github.com/nikhilm21/Movie-Recommender/pull/1.patch",
+                        "https://github.com/nikhilm21/Movie-Recommender/pull/1.diff"
+                        ]
+                    }
             }
         ]
     }

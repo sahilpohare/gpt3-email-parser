@@ -16,3 +16,8 @@ def convert(mail):
     text = ' '.join(chunk for chunk in chunks if chunk)
 
     return text
+
+with open('./train_html/pullreq.html', 'r') as f:
+    data = f.read()
+    print(convert(data))
+    f.close()
