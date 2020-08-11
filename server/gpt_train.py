@@ -3,7 +3,15 @@ from gpt import Example
 from gpt import GPT
 from converter import convert
 import os
+import requests
 
+def get_data(domain):
+    data = requests.get('http://localhost:4001/getSamples/'+domain)
+    data = data.json()
+    content = [x['prompt']['content'] for x in data]
+    answer = [x['answer'] for x in data]
+    mails = zip(content,answer)
+    return data, mails
 
 openai.api_key = 'sk-r5uc6is7lzeluGzpT0DOfYjbeJh7s8WPmMyfhngY'
 PATH = './train_html'
