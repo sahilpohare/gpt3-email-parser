@@ -8,7 +8,11 @@ npm install
 ```
 ## Running Server
 ```
-npm start
+npm run start 
+
+//in a differnt terminal
+npm run database
+
 ```
 ## Testing
 ```
