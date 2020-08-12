@@ -1,4 +1,7 @@
 {
+    "domainsToProcess":[
+        "trello"
+    ],
     "github": {
         "data": [
             {
@@ -75,6 +78,86 @@
                         "https://github.com/nikhilm21/Movie-Recommender/pull/1.diff"
                         ]
                     }
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "GitHub",
+                            "address": "noreply@github.com"
+                        }
+                    ],
+                    "subject": "[GitHub] Subscribed to getmailscript/gpt3-api notifications",
+                    "content": "Hey there, we=E2=80=99re just writing to let you know that you=E2=80=99ve b= een automatically subscribed to a repository on GitHub. getmailscript/gpt3-api https://github.com/getmailscript/gpt3-api You=E2=80=99ll receive notifications for all issues, pull requests, and com= ments that happen inside the repository. If you would like to stop watching= this repository, you can manage your settings here: https://github.com/getmailscript/gpt3-api/subscription You can unwatch this repository immediately by clicking here: https://github.com/getmailscript/gpt3-api/unsubscribe_via_email/AN2BDH6= 4BEYZNYWIZM4ZBFDSADTX5ANCNFSM4EIBTAKA You were automatically subscribed because you=E2=80=99ve been given access = to the repository. Thanks! -"
+                },
+                "answer": {
+                    "Type":"Subscription",
+                    "repository":"getmailscript/gpt3-api",
+                    "links": "https://github.com/getmailscript/gpt3-api%22%7D"
+                    }
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Rahul Das",
+                            "address": "notifications@github.com"
+                        }
+                    ],
+                    "subject": "Re: [rahul81/Market_Analysis] Create README.md (#1)",
+                    "content": "@rahul81 commented on this pull request. Not Accurate —You are receiving this because you authored the thread.Reply to this email directly, view it on GitHub, or unsubscribe."
+                },
+                "answer": {
+                    "Type":"Change on Pull Request",
+                    "by":"rahul81",
+                    "comment":"Not Accurate",
+                    "from": "GitHub"
+                    }
+            }
+        ]
+    },
+    "trello": {
+        "data": [
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Trello",
+                            "address": "do-not-reply@trello.com"
+                        }
+                    ],
+                    "subject": "8 new notifications on GPT3Parser since 4:57 PM (August 12, 2020)",
+                    "content": "Rahul D added you to the card Wolf of the wall Street (https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street) on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)"
+                },
+                "answer": {
+                    "Type":"Action", 
+                    "by":"Rahul D",
+                    "action":"added",
+                    "card":"Wolf of the wall Street",
+                    "board":"GPT3Parser",
+                    "from":"trello"
+                }
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Trello",
+                            "address": "do-not-reply@trello.com"
+                        }
+                    ],
+                    "subject": "8 new notifications on GPT3Parser since 4:57 PM (August 12, 2020)",
+                    "content": "Rahul D moved the card Finding nemo (https://trello.com/c/ofnVRjPQ/5-finding-nemo) to new tings on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)"
+                },
+                "answer":{
+                    "Type":"Action", 
+                    "by":"Rahul D",
+                    "action":"moved",
+                    "from-card":"Finding Nemo",
+                    "to-card":"new tings",
+                    "board":"GPT3Parser",
+                    "from":"trello"
+                }
             }
         ]
     }

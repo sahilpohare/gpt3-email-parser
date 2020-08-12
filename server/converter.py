@@ -17,7 +17,3 @@ def convert(mail):
 
     return text
 
-with open('./train_html/pullreq.html', 'r') as f:
-    data = f.read()
-    print(convert(data))
-    f.close()

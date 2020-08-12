@@ -216,5 +216,5 @@ axios({
     },
     data : JSON.stringify(jsonData)
 }).then((res)=>{
-    console.log(res.data);
+    console.log(res.data.map(val => JSON.parse(val)));
 }).catch(e=>console.log(e));

@@ -2,7 +2,7 @@
 
 import openai
 
-openai.api_key = 'sk-r5uc6is7lzeluGzpT0DOfYjbeJh7s8WPmMyfhngY'
+openai.api_key = os.environ.get('APIKEY')
 def set_openai_key(key):
     """Sets OpenAI key."""
     openai.api_key = key
