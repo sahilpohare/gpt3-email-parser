@@ -1,11 +1,11 @@
+from dotenv import load_dotenv
+load_dotenv()
 from converter import convert
 from gpt_train import parse
 import os 
 import json
 import argparse
-from dotenv import load_dotenv
 
-load_dotenv()
 
 
 argparser = argparse.ArgumentParser()
@@ -23,7 +23,7 @@ body = args.body
 if body != None:
     body = json.loads(body)['content']
 
-PATH = '.server/test_html'
+PATH = 'test_html'
 
 def process(filename):
     if filename != None and body == None:
