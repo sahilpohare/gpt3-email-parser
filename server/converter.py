@@ -1,10 +1,11 @@
 from bs4 import BeautifulSoup
 
+
 def convert(mail):
 
-    soup = BeautifulSoup(mail,features='html.parser')
+    soup = BeautifulSoup(mail, features="html.parser")
     for script in soup(["script", "style"]):
-        script.extract()    # rip it out
+        script.extract()  # rip it out
 
     # get text
     text = soup.get_text()
@@ -13,7 +14,6 @@ def convert(mail):
     # break multi-headlines into a line each
     chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
     # drop blank lines
-    text = ' '.join(chunk for chunk in chunks if chunk)
+    text = " ".join(chunk for chunk in chunks if chunk)
 
     return text
-

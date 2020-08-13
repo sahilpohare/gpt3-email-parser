@@ -1,13 +1,17 @@
 """Creates the Example and GPT classes for a user to interface with the OpenAI API."""
 
 import openai
+import os
 
-openai.api_key = os.environ.get('APIKEY')
+openai.api_key = os.environ.get("APIKEY")
+
+
 def set_openai_key(key):
     """Sets OpenAI key."""
     openai.api_key = key
 
-class Example():
+
+class Example:
     """Stores an input, output pair and formats it to prime the model."""
 
     def __init__(self, inp, out):
@@ -31,9 +35,7 @@ class GPT:
     """The main class for a user to interface with the OpenAI API.
     A user can add examples and set parameters of the API request."""
 
-    def __init__(self, engine='davinci',
-                 temperature=0.5,
-                 max_tokens=100):
+    def __init__(self, engine="davinci", temperature=0.5, max_tokens=100):
         self.examples = []
         self.engine = engine
         self.temperature = temperature
@@ -47,7 +49,7 @@ class GPT:
 
     def get_prime_text(self):
         """Formats all examples to prime the model."""
-        return '\n'.join(self.examples) + '\n'
+        return "\n".join(self.examples) + "\n"
 
     def get_engine(self):
         """Returns the engine specified for the API."""
@@ -67,20 +69,19 @@ class GPT:
 
     def submit_request(self, prompt):
         """Calls the OpenAI API with the specified parameters."""
-        response = openai.Completion.create(engine=self.get_engine(),
-                                            prompt=self.craft_query(prompt),
-                                            max_tokens=self.get_max_tokens(),
-                                            temperature=self.get_temperature(),
-                                            top_p=1,
-                                            n=1,
-                                            stream=False,
-                                            stop="\ninput:")
+        response = openai.Completion.create(
+            engine=self.get_engine(),
+            prompt=self.craft_query(prompt),
+            max_tokens=self.get_max_tokens(),
+            temperature=self.get_temperature(),
+            top_p=1,
+            n=1,
+            stream=False,
+            stop="\ninput:",
+        )
         return response
 
     def get_top_reply(self, prompt):
         """Obtains the best result as returned by the API."""
         response = self.submit_request(prompt)
-        return response['choices'][0]['text']
-
-
-
+        return response["choices"][0]["text"]
