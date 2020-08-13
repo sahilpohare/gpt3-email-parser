@@ -208,7 +208,11 @@ const jsonData = {
     content : htmlData,
     subject : "rahul81 invited you to rahul81/GPT3parser",
 }
-
+axios({
+  url : 'http://localhost:4001/getSamples/github',
+}).then((res)=>{
+  console.log(res.data)
+})
 axios({
     url : 'http://localhost:3200/parse',
     headers : {
@@ -216,5 +220,5 @@ axios({
     },
     data : JSON.stringify(jsonData)
 }).then((res)=>{
-    console.log(res.data.map(val => JSON.parse(val)));
+    console.log(res.data);
 }).catch(e=>console.log(e));

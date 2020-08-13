@@ -7,16 +7,7 @@ app.use(bodyParser.json());
 const db = new JsonDB(new Config('./db/mailTrain', true, true, '/'));
 
 var extractDomain = (addr) => addr.split('@')[1].split('.')[0];
-/*
-    {
-        prompt : {
 
-        },
-        answer : {
-
-        }
-    }
-*/
 app.post('/addSample', (req, res) => {
     const collectionName = extractDomain(req.body.prompt.from[0].address);
     console.log('post : ' + collectionName);
