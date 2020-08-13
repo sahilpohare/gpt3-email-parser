@@ -1,13 +1,20 @@
 from dotenv import load_dotenv
+<<<<<<< HEAD
 
 load_dotenv()
 
+=======
+load_dotenv()
+>>>>>>> 16b270c54cb802a365b514e50e747007de5b0e23
 from converter import convert
 from gpt_train import parse
 import os
 import json
 import argparse
+<<<<<<< HEAD
 import re
+=======
+>>>>>>> 16b270c54cb802a365b514e50e747007de5b0e23
 
 
 domain = os.environ.get("domain")
@@ -31,6 +38,10 @@ if body != None:
 
 PATH = "test_html"
 
+<<<<<<< HEAD
+=======
+PATH = 'test_html'
+>>>>>>> 16b270c54cb802a365b514e50e747007de5b0e23
 
 def process(filename):
     if filename != None and body == None:
