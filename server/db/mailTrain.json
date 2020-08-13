@@ -127,14 +127,62 @@
                         }
                     ],
                     "subject": "8 new notifications on GPT3Parser since 4:57 PM (August 12, 2020)",
-                    "content": "Rahul D added you to the card Wolf of the wall Street (https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street) on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)"
+                    "content": ".\n\nRahul D added you to the card Wolf of the wall Street (https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street) on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)\n\n Reply via email: nikhilmishra3+2tqhnhzbml13gniy791+2uu3fmazkn6lijc4712+24abwbijo1@"
                 },
                 "answer": {
                     "Type":"Action", 
                     "by":"Rahul D",
                     "action":"added",
                     "card":"Wolf of the wall Street",
+                    "card-link":"https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street",
                     "board":"GPT3Parser",
+                    "board-link":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "from":"trello" 
+                }
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Trello",
+                            "address": "do-not-reply@trello.com"
+                        }
+                    ],
+                    "subject": "8 new notifications on GPT3Parser since 4:57 PM (August 12, 2020)",
+                    "content": "\n\nRahul D moved the card Finding nemo (https://trello.com/c/ofnVRjPQ/5-finding-nemo) to new tings on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)\n\n Reply via email: nikhilmishra3+2tqhnhzbml13gniy791+2uu3fe1tkn81roaxgqb+12qj5s4m1a@"
+                },
+                "answer":{
+                    "Type":"Action", 
+                    "by":"Rahul D",
+                    "action":"moved",
+                    "from-card":"Finding Nemo",
+                    "card-link":"https://trello.com/c/ofnVRjPQ/5-finding-nemo",
+                    "to-card":"new tings",
+                    "board":"GPT3Parser",
+                    "board-link":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "from":"trello"
+                }
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Trello",
+                            "address": "do-not-reply@trello.com"
+                        }
+                    ],
+                    "subject": "2 new notifications on GPT3Parser since 5:07 PM (August 12, 2020)",
+                    "content":".\n\nRahul D commented on the card Finding nemo (https://trello.com/c/ofnVRjPQ/5-finding-nemo) on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)\n\n \"Try finding nemo asap!! \"\n\n Reply via email: nikhilmishra3+2tqhnhzbml13gniy791+2uu3fe1tkn81roaxgqb+12qj5s4m1a@"
+                },
+                "answer":{
+                    "Type":"Action", 
+                    "by":"Rahul D",
+                    "action":"comment",
+                    "card":"Finding nemo",
+                    "card-link":"https://trello.com/c/ofnVRjPQ/5-finding-nemo",
+                    "comments":"Try finding nemo asap!!",
+                    "board":"GPT3Parser",
+                    "board-link":"https://trello.com/b/Zpi6DEb2/gpt3parser",
                     "from":"trello"
                 }
             },
@@ -147,18 +195,66 @@
                         }
                     ],
                     "subject": "8 new notifications on GPT3Parser since 4:57 PM (August 12, 2020)",
-                    "content": "Rahul D moved the card Finding nemo (https://trello.com/c/ofnVRjPQ/5-finding-nemo) to new tings on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)"
+                    "content": ".\n\nRahul D added you to the card Wolf of the wall Street (https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street) on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)\n\n Reply via email: nikhilmishra3+2tqhnhzbml13gniy791+2uu3fmazkn6lijc4712+24abwbijo1@"
                 },
-                "answer":{
+                "answer": {
                     "Type":"Action", 
                     "by":"Rahul D",
-                    "action":"moved",
-                    "from-card":"Finding Nemo",
-                    "to-card":"new tings",
+                    "action":"added",
+                    "card":"Wolf of the wall Street",
+                    "card-link":"https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street",
                     "board":"GPT3Parser",
+                    "board-link":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "from":"trello" 
+                }
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Trello",
+                            "address": "do-not-reply@trello.com"
+                        }
+                    ],
+                    "subject": "8 new notifications on GPT3Parser since 4:57 PM (August 12, 2020)",
+                    "content": ".\n\nGorka Ludlow moved the card Socket rejection bug (https://trello.com/c/4Xfb7Dld/6-socket-rejection-bug) to Done on MailScript VS Code extension (https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension)\n\n Reply via email: sahilpohare+2qqyfw1segyt5ih27rw+2uqd5icn0p6qj6e9tgs+2kll3h0nz5@"
+                },
+                "answer": {
+                    "Type":"Action",
+                    "by":"Gorka Ludlow",
+                    "action":"moved",
+                    "from-card":"Socket rejection bug",
+                    "card-link":"https://trello.com/c/4Xfb7Dld/6-socket-rejection-bug",
+                    "to-card":"Done",
+                    "board":"MailScript VS Code extension",
+                    "board-link":"https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension",
+                    "from":"trello"
+                }
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Trello",
+                            "address": "do-not-reply@trello.com"
+                        }
+                    ],
+                    "subject": "8 new notifications on GPT3Parser since 4:57 PM (August 12, 2020)",
+                    "content": "\n\nGorka Ludlow added you to the card Record video msg notification (https://trello.com/c/YPjbAsJK/11-record-video-msg-notification) on MailScript VS Code extension (https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension)\n\n Reply via email: sahilpohare+2qqyfw1segyt5ih27rw+2uqvifazsr7ky655roc+2mvgtbosjq@"
+                },
+                "answer": {
+                    "Type":"Action", 
+                    "by":"Gorka Ludlow",
+                    "action":"added",
+                    "card":"Record video msg notification",
+                    "card-link":"https://trello.com/c/YPjbAsJK/11-record-video-msg-notification",
+                    "board":"MailScript VS Code extension",
+                    "board-link":"https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension",
                     "from":"trello"
                 }
             }
+            
+            
         ]
     }
 }
