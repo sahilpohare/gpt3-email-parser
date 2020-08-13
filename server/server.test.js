@@ -204,21 +204,27 @@ const htmlData = `<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 </html>`;
 
 const jsonData = {
-    from : [{name : 'sahil', address : 'sahilpohare@gmail.com'}],
-    content : htmlData,
-    subject : "rahul81 invited you to rahul81/GPT3parser",
-}
-axios({
-  url : 'http://localhost:4001/getSamples/github',
-}).then((res)=>{
-  console.log(res.data)
-})
-axios({
-    url : 'http://localhost:3200/parse',
-    headers : {
-        'Content-Type' : 'application/json'
-    },
-    data : JSON.stringify(jsonData)
-}).then((res)=>{
-    console.log(res.data);
-}).catch(e=>console.log(e));
+	from: [ { name: 'sahil', address: 'sahilpohare@gmail.com' } ],
+	content: htmlData,
+	subject: 'rahul81 invited you to rahul81/GPT3parser'
+};
+
+test('test parsing', () => {
+	expect(async () => {
+		let res = await axios({
+			url: 'http://localhost:3200/parse',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			data: JSON.stringify(jsonData)
+    });
+    
+    return res.data[0]
+	}).toBe({
+    "Type":"Invitation", 
+    "invitor":"rahul81", 
+    "repo":"GPT3parser", 
+    "repolink":"https://github.com/rahul81/GPT3parser", 
+    "For":"sahilpohare@gmail.com"
+  })
+});
