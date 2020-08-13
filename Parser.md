@@ -1,6 +1,7 @@
 ## Dependecies
 * openai
 * BeautifulSoup4
+* python-dotenv
 
 #### Installing dependencies
 ```python 
