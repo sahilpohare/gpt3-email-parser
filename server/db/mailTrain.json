@@ -20,7 +20,7 @@
                     "type": "Invitation",
                     "invitor": "rahul81",
                     "repo": "GPT3parser",
-                    "repo-link": "https://github.com/rahul81/GPT3parser",
+                    "repoLink": "https://github.com/rahul81/GPT3parser",
                     "for": "sahilpohare@gmail.com"
                 }
             },
@@ -136,9 +136,9 @@
                     "by":"Rahul D",
                     "action":"added",
                     "card":"Wolf of the wall Street",
-                    "card-link":"https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street",
+                    "cardLink":"https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street",
                     "board":"GPT3Parser",
-                    "board-link":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "boardLink":"https://trello.com/b/Zpi6DEb2/gpt3parser",
                     "from":"trello" 
                 }
             },
@@ -158,10 +158,10 @@
                     "by":"Rahul D",
                     "action":"moved",
                     "from-card":"Finding Nemo",
-                    "card-link":"https://trello.com/c/ofnVRjPQ/5-finding-nemo",
-                    "to-card":"new tings",
+                    "cardLink":"https://trello.com/c/ofnVRjPQ/5-finding-nemo",
+                    "toCard":"new tings",
                     "board":"GPT3Parser",
-                    "board-link":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "boardLink":"https://trello.com/b/Zpi6DEb2/gpt3parser",
                     "from":"trello"
                 }
             },
@@ -181,10 +181,10 @@
                     "by":"Rahul D",
                     "action":"comment",
                     "card":"Finding nemo",
-                    "card-link":"https://trello.com/c/ofnVRjPQ/5-finding-nemo",
+                    "cardLink":"https://trello.com/c/ofnVRjPQ/5-finding-nemo",
                     "comments":"Try finding nemo asap!!",
                     "board":"GPT3Parser",
-                    "board-link":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "boardLink":"https://trello.com/b/Zpi6DEb2/gpt3parser",
                     "from":"trello"
                 }
             },
@@ -204,9 +204,9 @@
                     "by":"Rahul D",
                     "action":"added",
                     "card":"Wolf of the wall Street",
-                    "card-link":"https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street",
+                    "cardLink":"https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street",
                     "board":"GPT3Parser",
-                    "board-link":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "boardLink":"https://trello.com/b/Zpi6DEb2/gpt3parser",
                     "from":"trello" 
                 }
             },
@@ -226,10 +226,10 @@
                     "by":"Gorka Ludlow",
                     "action":"moved",
                     "from-card":"Socket rejection bug",
-                    "card-link":"https://trello.com/c/4Xfb7Dld/6-socket-rejection-bug",
-                    "to-card":"Done",
+                    "cardLink":"https://trello.com/c/4Xfb7Dld/6-socket-rejection-bug",
+                    "toCard":"Done",
                     "board":"MailScript VS Code extension",
-                    "board-link":"https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension",
+                    "boardLink":"https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension",
                     "from":"trello"
                 }
             },
@@ -249,7 +249,7 @@
                     "by":"Gorka Ludlow",
                     "action":"added",
                     "card":"Record video msg notification",
-                    "card-link":"https://trello.com/c/YPjbAsJK/11-record-video-msg-notification",
+                    "cardLink":"https://trello.com/c/YPjbAsJK/11-record-video-msg-notification",
                     "board":"MailScript VS Code extension",
                     "board-link":"https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension",
                     "from":"trello"

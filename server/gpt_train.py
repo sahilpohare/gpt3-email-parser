@@ -6,26 +6,28 @@ import os
 import requests
 from dataretrieve import get_data, get_content, get_answer
 
-domain = os.environ.get("domain")
 
-data = get_data(domain)
+class GPTTrain(object):
+
+    def __init__(self,domain='github'):
+        self.domain = domain
+        self.data = get_data(self.domain)
+
+    def read_html(self,path):
+
+        with open(path, "r") as f:
+            resp = f.read()
+            f.close()
+            resp = convert(resp)
+        return resp
 
 
-def read_html(path):
+    def parse(self,test):
+        gpt3 = GPT(engine="davinci", temperature=0.9, max_tokens=150)
 
-    with open(path, "r") as f:
-        resp = f.read()
-        f.close()
-        resp = convert(resp)
-    return resp
+        for instance in self.data:
+            gpt3.add_example(Example(get_content(instance), get_answer(instance)))
 
+        output = gpt3.get_top_reply(test).replace("output: ", "").strip()
 
-def parse(test):
-    gpt3 = GPT(engine="davinci", temperature=0.9, max_tokens=150)
-
-    for instance in data:
-        gpt3.add_example(Example(get_content(instance), get_answer(instance)))
-
-    output = gpt3.get_top_reply(test).replace("output: ", "").strip()
-
-    return output
+        return output
