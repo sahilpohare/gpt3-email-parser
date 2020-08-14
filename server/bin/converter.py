@@ -5,7 +5,7 @@ def convert(mail):
 
     soup = BeautifulSoup(mail, features="html.parser")
     for script in soup(["script", "style"]):
-        script.extract() 
+        script.extract()
 
     text = soup.get_text()
 

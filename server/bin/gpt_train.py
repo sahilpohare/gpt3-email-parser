@@ -7,13 +7,13 @@ import requests
 from dataretrieve import get_data, get_content, get_answer
 import json
 
-class GPTTrain(object):
 
-    def __init__(self,domain='github'):
+class GPTTrain(object):
+    def __init__(self, domain="github"):
         self.domain = domain
         self.data = get_data(self.domain)
 
-    def read_html(self,path):
+    def read_html(self, path):
 
         with open(path, "r") as f:
             resp = f.read()
@@ -21,8 +21,7 @@ class GPTTrain(object):
             resp = convert(resp)
         return resp
 
-
-    def parse(self,test):
+    def parse(self, test):
         gpt3 = GPT(engine="davinci", temperature=0.9, max_tokens=150)
 
         for instance in self.data:
@@ -32,5 +31,4 @@ class GPTTrain(object):
         output = output[: output.find("}") + 1]
         output = output.replace("'", '"')
 
-
-        return output, list(self.data[0]['answer'].keys())
+        return output, list(self.data[0]["answer"].keys())
