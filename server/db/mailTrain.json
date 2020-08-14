@@ -3,6 +3,7 @@
         "trello"
     ],
     "github": {
+        "prioritize_html" : true,
         "data": [
             {
                 "prompt": {
@@ -117,6 +118,7 @@
         ]
     },
     "trello": {
+        "prioritize_html" : false,
         "data": [
             {
                 "prompt": {
