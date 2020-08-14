@@ -19,8 +19,9 @@
                     "type": "Invitation",
                     "invitor": "rahul81",
                     "repo": "GPT3parser",
-                    "repo-link": "https://github.com/rahul81/GPT3parser",
-                    "for": "sahilpohare@gmail.com"
+                    "repoLink": "https://github.com/rahul81/GPT3parser",
+                    "for": "sahilpohare@gmail.com",
+                    "from":"github"
                 }
             },
             {
@@ -39,7 +40,7 @@
                     "name":"rahul81",
                     "application":"Dockship",
                     "link":"https://github.com/settings/connections/applications/ccb42a8e19665bcd148e",
-                    "From":"The GitHub Team"
+                    "from":"github"
                 }
             },
             {
@@ -57,7 +58,7 @@
                     "type":"email_added",
                     "name":"rahul81",
                     "new_email":"rahul.das@adypu.edu.in",
-                    "From":"The GitHub Team"}
+                    "from":"github"}
             },
             {
                 "prompt": {
@@ -77,7 +78,8 @@
                         "https://github.com/nikhilm21/Movie-Recommender/pull/1.patch",
                         "https://github.com/nikhilm21/Movie-Recommender/pull/1.diff"
                         ]
-                    }
+                    },
+                    "from":"github"
             },
             {
                 "prompt": {
@@ -93,7 +95,8 @@
                 "answer": {
                     "type":"Subscription",
                     "repository":"getmailscript/gpt3-api",
-                    "links": "https://github.com/getmailscript/gpt3-api%22%7D"
+                    "links": "https://github.com/getmailscript/gpt3-api%22%7D",
+                    "from":"github"
                     }
             },
             {
@@ -111,9 +114,10 @@
                     "type":"Change on Pull Request",
                     "by":"rahul81",
                     "comment":"Not Accurate",
-                    "from": "GitHub"
+                    "from": "github"
                     }
             }
+            
         ]
     },
     "trello": {
@@ -134,9 +138,9 @@
                     "by":"Rahul D",
                     "action":"added",
                     "card":"Wolf of the wall Street",
-                    "card-link":"https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street",
+                    "cardLink":"https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street",
                     "board":"GPT3Parser",
-                    "board-link":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "boardLink":"https://trello.com/b/Zpi6DEb2/gpt3parser",
                     "from":"trello" 
                 }
             },
@@ -156,10 +160,10 @@
                     "by":"Rahul D",
                     "action":"moved",
                     "from-card":"Finding Nemo",
-                    "card-link":"https://trello.com/c/ofnVRjPQ/5-finding-nemo",
-                    "to-card":"new tings",
+                    "cardLink":"https://trello.com/c/ofnVRjPQ/5-finding-nemo",
+                    "toCard":"new tings",
                     "board":"GPT3Parser",
-                    "board-link":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "boardLink":"https://trello.com/b/Zpi6DEb2/gpt3parser",
                     "from":"trello"
                 }
             },
@@ -179,10 +183,10 @@
                     "by":"Rahul D",
                     "action":"comment",
                     "card":"Finding nemo",
-                    "card-link":"https://trello.com/c/ofnVRjPQ/5-finding-nemo",
+                    "cardLink":"https://trello.com/c/ofnVRjPQ/5-finding-nemo",
                     "comments":"Try finding nemo asap!!",
                     "board":"GPT3Parser",
-                    "board-link":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "boardLink":"https://trello.com/b/Zpi6DEb2/gpt3parser",
                     "from":"trello"
                 }
             },
@@ -202,9 +206,9 @@
                     "by":"Rahul D",
                     "action":"added",
                     "card":"Wolf of the wall Street",
-                    "card-link":"https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street",
+                    "cardLink":"https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street",
                     "board":"GPT3Parser",
-                    "board-link":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "boardLink":"https://trello.com/b/Zpi6DEb2/gpt3parser",
                     "from":"trello" 
                 }
             },
@@ -224,10 +228,10 @@
                     "by":"Gorka Ludlow",
                     "action":"moved",
                     "from-card":"Socket rejection bug",
-                    "card-link":"https://trello.com/c/4Xfb7Dld/6-socket-rejection-bug",
-                    "to-card":"Done",
+                    "cardLink":"https://trello.com/c/4Xfb7Dld/6-socket-rejection-bug",
+                    "toCard":"Done",
                     "board":"MailScript VS Code extension",
-                    "board-link":"https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension",
+                    "boardLink":"https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension",
                     "from":"trello"
                 }
             },
@@ -247,7 +251,7 @@
                     "by":"Gorka Ludlow",
                     "action":"added",
                     "card":"Record video msg notification",
-                    "card-link":"https://trello.com/c/YPjbAsJK/11-record-video-msg-notification",
+                    "cardLink":"https://trello.com/c/YPjbAsJK/11-record-video-msg-notification",
                     "board":"MailScript VS Code extension",
                     "board-link":"https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension",
                     "from":"trello"
@@ -256,5 +260,53 @@
             
             
         ]
+    },
+    "github_actions":{
+        "data":[
+            {
+                "prompt":{
+                    "from": [
+                        {
+                            "name": "sahilpohare",
+                            "address": "notifications@github.com"
+                        }
+                    ],
+                    "subject": "[sahilpohare/newRepo] Run failed: dino.js CI - master (5abdf6a)",
+                    "content": "Run failed for master (5abdf6a)\n\nRepository: sahilpohare/newRepo\nWorkflow: dino.js CI\nDuration: 30.0 seconds\nFinished: 2020-08-14 08:17:38 UTC\n\nView results: https://github.com/sahilpohare/newRepo/actions/runs/208283272\n\nJobs:\n  * build (10.x) failed (1 annotation)\n  * build (12.x) cancelled (2 annotations)\n  * build (14.x) cancelled (2 annotations)\n\n-- \nYou are receiving this because this workflow ran on your branch.\nManage your GitHub Actions notifications: https://github.com/settings/notifications"
+
+                },
+                "answer": {
+                    "type":"actions",
+                    "branch":"master",
+                    "repo":"sahilpohare/newRepo\nWorkflow: dino.js CI",
+                    "link":"https://github.com/sahilpohare/newRepo/actions/runs/208283272",
+                    "from":"github"
+                
+                }
+            },
+            {
+                "prompt":{
+                    "from": [
+                        {
+                            "name": "sahilpohare",
+                            "address": "notifications@github.com"
+                        }
+                    ],
+                    "subject": "[sahilpohare/Reactapp] Run failed: dino.js CI - master (e6b1a8b)",
+                    "content": "Run failed for master (e6b1a8b)\n\nRepository: sahilpohare/testRepo\nWorkflow: dino.js CI\nDuration: 26.0 seconds\nFinished: 2020-08-14 13:23:02 UTC\n\nView results: https://github.com/sahilpohare/testRepo/actions/runs/208620926\n\nJobs:\n  * build (10.x) cancelled (2 annotations)\n  * build (12.x) cancelled (2 annotations)\n  * build (14.x) failed (1 annotation)\n\n-- \nYou are receiving this because this workflow ran on your branch.\nManage your GitHub Actions notifications: https://github.com/settings/notifications"
+
+                },
+                "answer": {
+                    "type":"actions",
+                    "branch":"master",
+                    "repo":"sahilpohare/Reactapp\nWorkflow: dino.js CI",
+                    "link":"https://github.com/sahilpohare/Reactapp/actions/runs/208283272",
+                    "from":"github"
+                
+                }
+            }
+        ]
+
     }
+
 }

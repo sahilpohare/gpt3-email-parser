@@ -5,27 +5,35 @@ from converter import convert
 import os
 import requests
 from dataretrieve import get_data, get_content, get_answer
+import json
 
-domain = os.environ.get("domain")
+class GPTTrain(object):
 
-data = get_data(domain)
+    def __init__(self,domain='github'):
+        self.domain = domain
+        self.data = get_data(self.domain)
+
+    def read_html(self,path):
+
+        with open(path, "r") as f:
+            resp = f.read()
+            f.close()
+            resp = convert(resp)
+        return resp
 
 
-def read_html(path):
+    def parse(self,test):
+        gpt3 = GPT(engine="davinci", temperature=0.9, max_tokens=150)
 
-    with open(path, "r") as f:
-        resp = f.read()
-        f.close()
-        resp = convert(resp)
-    return resp
+        for instance in self.data:
+            gpt3.add_example(Example(get_content(instance), get_answer(instance)))
+        # print(gpt3.craft_query(test))
+        output = gpt3.get_top_reply(test).replace("output: ", "").strip()
 
+        output = output[: output.find("}") + 1]
+        output = output.replace("'", '"')
 
-def parse(test):
-    gpt3 = GPT(engine="davinci", temperature=0.9, max_tokens=150)
+        # print(json.loads(output)[list(json.loads(output).keys())[-1]])
+        # print(self.data[0]['answer'][list(self.data[0]['answer'].keys())[-1]])
 
-    for instance in data:
-        gpt3.add_example(Example(get_content(instance), get_answer(instance)))
-
-    output = gpt3.get_top_reply(test).replace("output: ", "").strip()
-
-    return output
+        return output, list(self.data[0]['answer'].keys())
