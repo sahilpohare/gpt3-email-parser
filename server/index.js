@@ -3,9 +3,12 @@ const app = express();
 const { PythonShell } = require('python-shell');
 const bodyParser = require('body-parser');
 const axios = require('axios').default;
+const cors = require('cors');
 require('dotenv').config();
-
+app.use(cors());
 app.use(bodyParser.urlencoded(), bodyParser.json());
+
+var extractDomain = (addr) => addr.split('@')[1].split('.')[0];
 
 app.get('/', (req, res) => res.send('Mail Parse'));
 
@@ -23,22 +26,33 @@ app.post('/addSample', (req, res) => {
 
 app.get('/parse', async (req, res) => {
 	const timestamp = Date.now();
-	console.log('get : /parse timestamp : ' + timestamp);
-	let stringy = JSON.stringify(req.body);
+    console.log('get : /parse timestamp : ' + timestamp);
+    let data = Object.assign(req.body,{ domain : extractDomain(req.body.from[0].address)})
+    console.log(data);
+    let stringy = JSON.stringify(data);
 	PythonShell.run(
 		'./new_parser.py',
 		{
 			args: [ '-b', stringy ]
 		},
 		(err, result) => {
+            res.header('Content-Type', 'application/json');
 			if (!err) {
-				res.header('Content-Type', 'application/json');
-				result = result.map((val) => JSON.parse(val));
-				res.send(JSON.stringify(result));
-				return;
-			}
-			console.log('failed get : /parse timestamp : ' + timestamp, '\n', err);
-			res.send('error');
+                console.log(result);
+                try{
+                    result = result.map((val) => JSON.parse(val));
+                    res.send(JSON.stringify(result));
+                    return;
+                }
+                catch(e){
+                    console.log('failed get : /parse timestamp : ' + timestamp, '\n', err);
+                    res.send('error');
+                }
+			}else{
+                console.log(err)
+                console.log('failed get : /parse timestamp : ' + timestamp, '\n', err);
+                res.send('error');
+            }
 		}
 	);
 });

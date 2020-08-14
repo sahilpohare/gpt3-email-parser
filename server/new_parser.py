@@ -9,7 +9,6 @@ import re
 
 
 domain = os.environ.get("domain")
-print(domain)
 
 argparser = argparse.ArgumentParser()
 

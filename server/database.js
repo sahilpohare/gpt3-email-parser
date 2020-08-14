@@ -2,6 +2,10 @@ const app = require('express')();
 const { JsonDB } = require('node-json-db');
 const { Config } = require('node-json-db/dist/lib/JsonDBConfig');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+
+app.use(cors());
+
 app.use(bodyParser.json());
 
 const db = new JsonDB(new Config('./db/mailTrain', true, true, '/'));
