@@ -1,20 +1,19 @@
 from dotenv import load_dotenv
 load_dotenv()
 from converter import convert
-from gpt_train import parse
+from gpt_train import GPTTrain
 import os
 import json
 import argparse
 import re
 
 
-domain = os.environ.get("domain")
+# domain = os.environ.get("domain")
 
 argparser = argparse.ArgumentParser()
 
 argparser.add_argument("-i", "--input", type=str, default=None)
 argparser.add_argument("-b", "--body", type=str, default=None)
-argparser.add_argument("-d", "--domain", type=str, default=None)
 
 domainsToProcess = "trello"
 
@@ -24,7 +23,13 @@ filename = args.input
 body = args.body
 
 if body != None:
+    domain = json.loads(body)['domain']
     body = json.loads(body)["content"]
+
+    train = GPTTrain(domain=domain)
+else:
+    train = GPTTrain(domain=domain)
+
 
 PATH = "test_html"
 
@@ -55,9 +60,9 @@ def run(filename):
     try:
         if domain not in domainsToProcess:
             test = read_html(os.path.join(PATH, filename))
-            response = parse(test)
+            response = train.parse(test)
         else:
-            response = parse(filename)
+            response = train.parse(filename)
         response = response[: response.find("}") + 1]
         response = json.dumps(response.replace("'", '"'))
         print(response)
@@ -77,7 +82,7 @@ else:
     if filename != None:
         run(filename)
     elif body != None:
-        response = parse(convert(body))
+        response = train.parse(convert(body))
         response = response[: response.find("}") + 1]
         response = json.dumps(response.replace("'", '"'))
         print(response)
