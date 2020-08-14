@@ -30,11 +30,9 @@ if body != None:
     body = json.loads(body)["content"]
 
     train = GPTTrain(domain=domain)
-# else:
-#     train = GPTTrain(domain=domain)
 
 
-PATH = "test_html"
+PATH = "../test_html"
 
 
 
@@ -81,7 +79,6 @@ def run(filename, train, domain):
             json.loads(response)
             if list(json.loads(response).keys()) == check:
                 response = json.dumps(response)
-            # print(type(response))
                 return response, 'passed'
             else:
                 return response, 'fail'

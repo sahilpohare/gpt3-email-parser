@@ -27,13 +27,10 @@ class GPTTrain(object):
 
         for instance in self.data:
             gpt3.add_example(Example(get_content(instance), get_answer(instance)))
-        # print(gpt3.craft_query(test))
         output = gpt3.get_top_reply(test).replace("output: ", "").strip()
 
         output = output[: output.find("}") + 1]
         output = output.replace("'", '"')
 
-        # print(json.loads(output)[list(json.loads(output).keys())[-1]])
-        # print(self.data[0]['answer'][list(self.data[0]['answer'].keys())[-1]])
 
         return output, list(self.data[0]['answer'].keys())
