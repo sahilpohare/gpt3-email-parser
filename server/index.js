@@ -31,7 +31,7 @@ app.get('/parse', async (req, res) => {
     console.log(data);
     let stringy = JSON.stringify(data);
 	PythonShell.run(
-		'./new_parser.py',
+		'./bin/new_parser.py',
 		{
 			args: [ '-b', stringy ]
 		},
