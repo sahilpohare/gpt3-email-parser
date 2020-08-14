@@ -3,7 +3,6 @@
         "trello"
     ],
     "github": {
-        "prioritize_html" : true,
         "data": [
             {
                 "prompt": {
@@ -115,10 +114,10 @@
                     "from": "GitHub"
                     }
             }
+            
         ]
     },
     "trello": {
-        "prioritize_html" : false,
         "data": [
             {
                 "prompt": {
@@ -258,5 +257,31 @@
             
             
         ]
+    },
+    "github_actions":{
+        "data":[
+            {
+                "prompt":{
+                    "from": [
+                        {
+                            "name": "sahilpohare",
+                            "address": "notifications@github.com"
+                        }
+                    ],
+                    "subject": "[sahilpohare/testRepo] Run failed: Node.js CI - master (5abdf6a)",
+                    "content": "Run failed for master (5abdf6a)\n\nRepository: sahilpohare/testRepo\nWorkflow: Node.js CI\nDuration: 30.0 seconds\nFinished: 2020-08-14 08:17:38 UTC\n\nView results: https://github.com/sahilpohare/testRepo/actions/runs/208283272\n\nJobs:\n  * build (10.x) failed (1 annotation)\n  * build (12.x) cancelled (2 annotations)\n  * build (14.x) cancelled (2 annotations)\n\n-- \nYou are receiving this because this workflow ran on your branch.\nManage your GitHub Actions notifications: https://github.com/settings/notifications"
+
+                },
+                "answer": {
+                    "type":"actions",
+                    "branch":"master",
+                    "repo":"sahilpohare/testRepo\nWorkflow: Node.js CI",
+                    "link":"https://github.com/sahilpohare/testRepo/actions/runs/208283272"
+                
+                }
+            }
+        ]
+
     }
+
 }

@@ -204,31 +204,30 @@ or <a href="https://github.com/contact/report-abuse?report=rahul81" style="color
 </html>`;
 var jsonData = {
 	from: [ { name: 'Rahul Das', address: 'notification@github.com' } ],
-	content: htmlData,
+	content_html: htmlData,
 	subject: 'rahul81 invited you to rahul81/GPT3parser'
 };
 let stringy = JSON.stringify(jsonData);
 
 axios({
-  url: 'http://localhost:3200/parse',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  data: stringy
+	url: 'http://localhost:3200/parse',
+	headers: {
+		'Content-Type': 'application/json'
+	},
+	data: stringy
 })
-.then((res)=>{
-	stringy = res.data.map(val => JSON.parse(val)) 
-	console.log(stringy)
-
-})
-.catch(e=>console.log(e.message))
+	.then((res) => {
+		stringy = res.data.map((val) => JSON.parse(val));
+		console.log(stringy);
+	})
+	.catch((e) => console.log(e.message));
 // test('test parsing', async () => {
-	// var jsonData = {
-	// 	from: [ { name: 'Rahul Das', address: 'notification@github.com' } ],
-	// 	content: htmlData,
-	// 	subject: 'rahul81 invited you to rahul81/GPT3parser'
-	// };
-	// let stringy = JSON.stringify(jsonData);
+// var jsonData = {
+// 	from: [ { name: 'Rahul Das', address: 'notification@github.com' } ],
+// 	content: htmlData,
+// 	subject: 'rahul81 invited you to rahul81/GPT3parser'
+// };
+// let stringy = JSON.stringify(jsonData);
 // 	let res = await axios({
 // 		url: 'http://localhost:3200/parse',
 // 		headers: {

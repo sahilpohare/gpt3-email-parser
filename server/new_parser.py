@@ -23,8 +23,9 @@ filename = args.input
 body = args.body
 
 if body != None:
-    domain = json.loads(body)['domain']
-    body = json.loads(body)["content"]
+    data = json.loads(body)
+    domain = data['domain']
+    body = data["content"]
 
     train = GPTTrain(domain=domain)
 else:
