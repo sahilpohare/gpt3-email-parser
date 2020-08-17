@@ -5,7 +5,9 @@ const bodyParser = require("body-parser");
 const axios = require("axios").default;
 const cors = require("cors");
 const { parseMail } = require("./pythonRunner");
+
 require("dotenv").config();
+
 app.use(cors());
 app.use(bodyParser.urlencoded(), bodyParser.json());
 
@@ -31,10 +33,11 @@ app.get("/parse", async (req, res) => {
   const timestamp = Date.now();
   console.log("get : /parse timestamp : " + timestamp);
   res.header('Content-Type', 'application/json');
-  parseMail(
-    req.body.subject,
-    req.body.content,
-    req.body.from,
+
+  var data = { subject : req.body.subject, content : req.body.content, from : req.body.from, domain: extractDomain(req.body.from[0].address)}
+
+  parser(
+    data,
     (result, err, verified) => {
       if (!err || verified) {
         console.log(result)
