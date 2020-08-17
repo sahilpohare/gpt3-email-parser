@@ -4,14 +4,14 @@ from gpt import GPT
 from converter import convert
 import os
 import requests
-from dataretrieve import get_data, get_content, get_answer
+from dataretrieve import get_content, get_answer
 import json
 
 
 class GPTTrain(object):
-    def __init__(self, domain="github"):
+    def __init__(self,data, domain="github"):
         self.domain = domain
-        self.data = get_data(self.domain)
+        self.data = data
 
     def read_html(self, path):
 
