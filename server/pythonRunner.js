@@ -1,12 +1,12 @@
 const { PythonShell } = require("python-shell");
 const { extractDomain } = require("./utils");
 
-function parseMail(subject, content, from) {
-    var data = {subject, content, from}
+function parseMail(subject = '', content = '', from = []) {
+    var data = { subject, content, from }
     const stringy = JSON.stringify(data);
 
-    let data = Object.assign(req.body, {
-        domain: extractDomain(req.body.from[0].address),
+    let data = Object.assign(data, {
+        domain: extractDomain(from[0].address),
     });
 
     PythonShell.run(
@@ -17,18 +17,21 @@ function parseMail(subject, content, from) {
                 stringy
             ]
         },
-        (err, result) =>
-        {
+        (err, result) => {
             var verified = false;
-            try{
-               var res = JSON.parse(result[0]);
-               verified = true
-            }catch{
-               console.log('error @ openai');
-               console.log(res);
-               verified = false
+            try {
+                var res = JSON.parse(result[0]);
+                verified = true
+            } catch{
+                console.log('error @ openai');
+                console.log(res);
+                verified = false
             }
-            return {err, result : res, verified}
+            return { err, result: res, verified }
         }
     )
+}
+
+module.exports = {
+    parseMail
 }
