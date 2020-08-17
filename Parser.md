@@ -7,6 +7,10 @@
 ```python 
 pip install -r requirements.txt
 ```
+## Formatting the code via Black
+```python
+black ./folder_name/*.py
+```
 
 ## Flow of the code
 #### Working of the Parser
