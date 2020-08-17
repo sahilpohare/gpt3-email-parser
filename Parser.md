@@ -11,6 +11,8 @@ pip install -r requirements.txt
 ```python
 black ./folder_name/*.py
 ```
+Example:
+```black ./bin/*.py```
 
 ## Flow of the code
 #### Working of the Parser
