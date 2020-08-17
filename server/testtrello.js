@@ -23,19 +23,19 @@ Get Trello for your iPhone (http://itunes.com/apps/trello) or Trello for your An
 var jsonData = {
     from: [{ name: "Trello", address: "do-no-reply@trello.com" }],
     content: htmlData,
-    contentType : 'text/html',
+    contentType: 'text/plain',
     subject: "rahul81 invited you to rahul81/GPT3parser",
-  };
-  let stringy = JSON.stringify(jsonData);
-  
-  axios({
-    url: "http://localhost:3200/parse",
+};
+let stringy = JSON.stringify(jsonData);
+
+axios({
+    url: "http://localhost:3200/custom_routes/trello",
     headers: {
-      "Content-Type": "application/json",
+        "Content-Type": "application/json",
     },
     data: stringy,
-  })
+})
     .then((res) => {
-      console.log(res.data);
+        console.log(res.data);
     })
     .catch((e) => console.log(e.message));
