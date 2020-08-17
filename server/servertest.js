@@ -217,8 +217,7 @@ axios({
   data: stringy,
 })
   .then((res) => {
-    stringy = res.data.map((val) => JSON.parse(val));
-    console.log(stringy);
+    console.log(res.data);
   })
   .catch((e) => console.log(e.message));
 // test('test parsing', async () => {
