@@ -37,20 +37,19 @@ app.get("/parse", async (req, res) => {
 
   var data = {...req.body, domain: extractDomain(req.body.from[0].address)}
 
-  let ret = parser(
+  parser(
     data,
     (result, err, verified) => {
       if (!err || verified) {
-        console.log(result)
+        console.log(result[0])
         console.log('success get : /parse timestamp : ' + timestamp, "\n", err);
-        res.send(result)
+        res.send(result[0])
       } else {
         console.log("failed get : /parse timestamp : " + timestamp, "\n", err);
         res.send("error");
       }
     }
   );
-  console.log({ret, hii : 'aa'})
 });
 
 app.listen(
