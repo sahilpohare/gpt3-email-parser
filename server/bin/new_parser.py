@@ -1,5 +1,4 @@
 from dotenv import load_dotenv
-
 load_dotenv(dotenv_path='../.env')
 from converter import convert
 from gpt_train import GPTTrain
@@ -7,17 +6,15 @@ import os
 import json
 import argparse
 import re
+import requests
 
-subdomain = ["github", "github_actions"]
 
-domain = os.environ.get("domain")
 
 argparser = argparse.ArgumentParser()
 
 argparser.add_argument("-i", "--input", type=str, default=None)
 argparser.add_argument("-b", "--body", type=str, default=None)
 
-domainsToProcess = "trello"
 
 args = argparser.parse_args()
 
@@ -25,16 +22,25 @@ filename = args.input
 body = args.body
 
 
+
+def get_data(domain):
+    data = requests.get("http://localhost:4001/getSamples/" + domain)
+    data = data.json()
+    return data
+
 if body != None:
-    data = json.loads(body)
-    domain = data["domain"]
-    body = data["content"]
-    c_type = "text/plain"
-    
+    data_json = json.loads(body)
+    domain = data_json["domain"]
+    body = data_json["content"]
+    c_type = data_json['text/plain']
 
-    # train = GPTTrain(domain=domain)
+subdomain = requests.get("http://localhost:4001/getSubDomains/" + domain).json()
 
 
+
+#For debugging process
+
+'''
 PATH = "../test_html"
 
 
@@ -62,7 +68,7 @@ def read_html(path, domain):
 
         resp = convert(resp)
     return resp
-
+'''
 
 
 def run(content, train, domain):
@@ -78,10 +84,14 @@ def run(content, train, domain):
         except Exception as e:
             return response, 'fail'
     except Exception as e:
-        return response, 'fail'           
+        return response, 'fail'  
+
+
+             
 
 def recurse(body,domain, counter):
-    train = GPTTrain(domain=domain)
+    data = get_data(domain)
+    train = GPTTrain(data,domain=domain)
 
     if filename != None:
         response, status = run(filename, train, domain)
@@ -128,13 +138,7 @@ def recurse(body,domain, counter):
 
 
 
-if domain in subdomain and domain not in domainsToProcess:
+if domain in subdomain:
     counter = 0
     recurse(body,domain, counter)
 
-else:
-    train = GPTTrain(domain=domain)
-    if filename != None:
-        process(filename, train, domain)
-    elif body != None:
-        process(body, train, domain)

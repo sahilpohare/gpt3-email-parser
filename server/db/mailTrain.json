@@ -2,6 +2,10 @@
     "domainsToProcess":[
         "trello"
     ],
+    "subdomains" : {
+            "github" : [ "github" , "githubActions"],
+            "trello" : ["trello"]
+            },
     "github": {
         "data": [
             {
