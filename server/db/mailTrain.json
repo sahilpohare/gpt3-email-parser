@@ -3,7 +3,7 @@
         "trello"
     ],
     "subdomains" : {
-            "github" : [ "github" , "githubActions"],
+            "github" : [ "github" , "githubactions"],
             "trello" : ["trello"]
             },
     "github": {
@@ -265,7 +265,7 @@
             
         ]
     },
-    "github_actions":{
+    "githubactions":{
         "data":[
             {
                 "prompt":{

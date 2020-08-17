@@ -4,14 +4,14 @@ from gpt import GPT
 from converter import convert
 import os
 import requests
-from dataretrieve import get_data, get_content, get_answer
+from dataretrieve import get_content, get_answer
 import json
 
 
 class GPTTrain(object):
-    def __init__(self, domain="github"):
+    def __init__(self, data, domain="github"):
         self.domain = domain
-        self.data = get_data(self.domain)
+        self.data = data
 
     def read_html(self, path):
 
@@ -24,11 +24,11 @@ class GPTTrain(object):
     def parse(self, test):
         gpt3 = GPT(engine="davinci", temperature=0.9, max_tokens=150)
 
-        for instance in self.data:
+        for instance in self.data["data"]:
             gpt3.add_example(Example(get_content(instance), get_answer(instance)))
         output = gpt3.get_top_reply(test).replace("output: ", "").strip()
 
         output = output[: output.find("}") + 1]
         output = output.replace("'", '"')
 
-        return output, list(self.data[0]["answer"].keys())
+        return output, list(self.data["data"][0]["answer"].keys())

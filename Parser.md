@@ -15,12 +15,6 @@ This will set-up the virtual environment for the file.
 ```pipenv shell
    python new_parser.py -i [files in test_html]
 ```
-## Formatting the code via Black
-```python
-black ./folder_name/*.py
-```
-Example:
-```black ./bin/*.py```
 
 
 ## Flow of the code

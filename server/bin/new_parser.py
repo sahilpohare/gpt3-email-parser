@@ -1,23 +1,20 @@
 from dotenv import load_dotenv
 
-load_dotenv(dotenv_path='../.env')
+load_dotenv(dotenv_path="../.env")
 from converter import convert
 from gpt_train import GPTTrain
 import os
 import json
 import argparse
 import re
+import requests
 
-subdomain = ["github", "github_actions"]
-
-domain = os.environ.get("domain")
 
 argparser = argparse.ArgumentParser()
 
 argparser.add_argument("-i", "--input", type=str, default=None)
 argparser.add_argument("-b", "--body", type=str, default=None)
 
-domainsToProcess = "trello"
 
 args = argparser.parse_args()
 
@@ -25,16 +22,22 @@ filename = args.input
 body = args.body
 
 
+def get_data(domain):
+    data = requests.get("http://localhost:4001/getSamples/" + domain)
+    data = data.json()
+    return data
+
+
 if body != None:
-    data = json.loads(body)
-    domain = data["domain"]
-    body = data["content"]
-    c_type = "text/plain"
-    
+    data_json = json.loads(body)
+    domain = data_json["domain"]
+    body = data_json["content"]
+    c_type = data_json["contentType"]
 
-    # train = GPTTrain(domain=domain)
+subdomain = requests.get("http://localhost:4001/getSubDomains/" + domain).json()
 
 
+"""
 PATH = "../test_html"
 
 
@@ -62,11 +65,11 @@ def read_html(path, domain):
 
         resp = convert(resp)
     return resp
-
+"""
 
 
 def run(content, train, domain):
-    try: 
+    try:
         response, check = train.parse(content)
         try:
             json.loads(response)
@@ -76,12 +79,14 @@ def run(content, train, domain):
             else:
                 return response, "fail"
         except Exception as e:
-            return response, 'fail'
+            return response, "fail"
     except Exception as e:
-        return response, 'fail'           
+        return "Invalid", "fail"
 
-def recurse(body,domain, counter):
-    train = GPTTrain(domain=domain)
+
+def recurse(body, domain, counter):
+    data = get_data(domain)
+    train = GPTTrain(data, domain=domain)
 
     if filename != None:
         response, status = run(filename, train, domain)
@@ -97,44 +102,33 @@ def recurse(body,domain, counter):
             pass
     elif body != None:
 
-        if c_type == 'text/plain':
+        if c_type == "text/plain":
             response, status = run(body, train, domain)
-            
+
             if status == "fail":
                 if counter < len(subdomain) - 1:
                     counter += 1
                     domain = subdomain[counter]
-                    recurse(body,domain, counter)
+                    recurse(body, domain, counter)
                 else:
                     pass
             else:
                 print(json.loads(response))
-        elif c_type == 'text/html':
+        elif c_type == "text/html":
             body = convert(body)
             response, status = run(body, train, domain)
-            
+
             if status == "fail":
                 if counter < len(subdomain) - 1:
                     counter += 1
                     domain = subdomain[counter]
-                    recurse(body,domain, counter)
+                    recurse(body, domain, counter)
                 else:
                     pass
             else:
                 print(json.loads(response))
 
 
-
-
-
-
-if domain in subdomain and domain not in domainsToProcess:
+if domain in subdomain:
     counter = 0
-    recurse(body,domain, counter)
-
-else:
-    train = GPTTrain(domain=domain)
-    if filename != None:
-        process(filename, train, domain)
-    elif body != None:
-        process(body, train, domain)
+    recurse(body, domain, counter)

@@ -6,7 +6,6 @@ const axios = require("axios").default;
 const cors = require("cors");
 const { parser } = require("./pythonRunner");
 const { router } = require("./custom_routes/trello");
-const { databaseRouter } = require("./database");
 
 require("dotenv").config();
 
@@ -14,9 +13,9 @@ app.use(cors());
 app.use(bodyParser.urlencoded(), bodyParser.json());
 
 var extractDomain = (addr) => addr.split("@")[1].split(".")[0];
-app.use("/database", databaseRouter);
+
 app.get("/", (req, res) => res.send("Mail Parse"));
-app.use("./custom_routes", router);
+app.use("/custom_routes", router);
 app.post("/addSample", (req, res) => {
   const timestamp = Date.now();
   console.log("post : /addSample timestamp : " + timestamp);
@@ -44,8 +43,7 @@ app.get("/parse", async (req, res) => {
   };
 
   parser(data, (result, err, verified) => {
-    console.log(result)
-    if (!err || verified) {
+    if (!err && verified && result.length > 0) {
       console.log(result[0]);
       console.log("success get : /parse timestamp : " + timestamp, "\n", err);
       res.send(result[0]);
