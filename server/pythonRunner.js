@@ -4,16 +4,18 @@ function parser(data,cb) {
     
     
     const stringy = JSON.stringify(data);
-    
+    var res = []
+ 
     PythonShell.run(
-        './bin/new_parser.py',
+        './testing.py',
         {
            args: [
                 '-b',
                 stringy
             ]
         },
-        (err, result) => {
+        function(err, result) {
+            res = result
             var verified = false;
             try {
                 var res = JSON.parse(result[0]);
@@ -27,6 +29,7 @@ function parser(data,cb) {
             cb(result,err,verified);
         }
     )
+    return res;
 }
 
 module.exports = {

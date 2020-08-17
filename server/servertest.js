@@ -22,6 +22,7 @@ Manage your GitHub Actions notifications: https://github.com/settings/notificati
 var jsonData = {
   from: [{ name: "Rahul Das", address: "notification@github.com" }],
   content: htmlData,
+  contentType : 'text/html',
   subject: "rahul81 invited you to rahul81/GPT3parser",
 };
 let stringy = JSON.stringify(jsonData);
