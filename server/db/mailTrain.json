@@ -1,4 +1,7 @@
 {
+    "domainsToProcess":[
+        "trello"
+    ],
     "github": {
         "data": [
             {
@@ -13,11 +16,12 @@
                     "content": "rahul81 invited you to rahul81/GPT3parser @rahul81 has invited you to collaborate on therahul81/GPT3parser repository You can accept or decline this invitation. You can also visit @rahul81 to learn a bit more about them. This invitation will expire in 7 days. View invitation Note: This invitation was intended for sahilpohare@gmail.com. If you were not expecting this invitation, you can ignore\nthis email. If @rahul81 is sending you too many emails, you can block them or report abuse. Getting a 404 error? Make sure you’re signed in as sahilpohare. Button not working? Copy and paste this link into your browser: https://github.com/rahul81/GPT3parser/invitations Manage your GitHub email preferences Terms • Privacy • Log in to GitHub GitHub, Inc. 88 Colin P Kelly Jr Street San Francisco, CA 94107"
                 },
                 "answer": {
-                    "Type": "Invitation",
+                    "type": "Invitation",
                     "invitor": "rahul81",
                     "repo": "GPT3parser",
-                    "repolink": "https://github.com/rahul81/GPT3parser",
-                    "For": "sahilpohare@gmail.com"
+                    "repoLink": "https://github.com/rahul81/GPT3parser",
+                    "for": "sahilpohare@gmail.com",
+                    "from":"github"
                 }
             },
             {
@@ -32,11 +36,11 @@
                     "content": "Hey rahul81!\n\nA third-party OAuth application (Dockship) with user:email scope was recently authorized to access your account.\nVisit https://github.com/settings/connections/applications/ccb42a8e19665bcd148e for more information.\n\nTo see this and other security events for your account, visit https://github.com/settings/security\n\nIf you run into problems, please contact support by visiting https://github.com/contact\n\nThanks,\nThe GitHub Team\n"
                 },
                 "answer":{
-                    "Type":"Auth",
+                    "type":"Auth",
                     "name":"rahul81",
                     "application":"Dockship",
                     "link":"https://github.com/settings/connections/applications/ccb42a8e19665bcd148e",
-                    "From":"The GitHub Team"
+                    "from":"github"
                 }
             },
             {
@@ -51,10 +55,10 @@
                     "content": "Hey rahul81!\n\nAn email address (rahul.das@adypu.edu.in) was added to your account. Visit https://github.com/settings/emails to review email addresses currently associated with your account.\n\nTo see this and other security events for your account, visit https://github.com/settings/security\n\nIf you run into problems, please contact support by visiting https://github.com/contact\n\nThanks,\nThe GitHub Team"
                 },
                 "answer":{
-                    "Type":"email_added",
+                    "type":"email_added",
                     "name":"rahul81",
                     "new_email":"rahul.das@adypu.edu.in",
-                    "From":"The GitHub Team"}
+                    "from":"github"}
             },
             {
                 "prompt": {
@@ -68,14 +72,241 @@
                     "content": "Pull req test You can view, comment on, or merge this pull request online at: https://github.com/nikhilm21/Movie-Recommender/pull/1 Commit Summary Update README.md File Changes M README.md (2) Patch Links: https://github.com/nikhilm21/Movie-Recommender/pull/1.patch https://github.com/nikhilm21/Movie-Recommender/pull/1.diff —You are receiving this because you are subscribed to this thread.Reply to this email directly, view it on GitHub, or unsubscribe."
                 },
                 "answer": {
-                    "Type":"Pull_Request",
+                    "type":"Pull_Request",
                     "repo_link":"https://github.com/nikhilm21/Movie-Recommender/pull/1",
                     "patch_links": [
                         "https://github.com/nikhilm21/Movie-Recommender/pull/1.patch",
                         "https://github.com/nikhilm21/Movie-Recommender/pull/1.diff"
                         ]
+                    },
+                    "from":"github"
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "GitHub",
+                            "address": "noreply@github.com"
+                        }
+                    ],
+                    "subject": "[GitHub] Subscribed to getmailscript/gpt3-api notifications",
+                    "content": "Hey there, we=E2=80=99re just writing to let you know that you=E2=80=99ve b= een automatically subscribed to a repository on GitHub. getmailscript/gpt3-api https://github.com/getmailscript/gpt3-api You=E2=80=99ll receive notifications for all issues, pull requests, and com= ments that happen inside the repository. If you would like to stop watching= this repository, you can manage your settings here: https://github.com/getmailscript/gpt3-api/subscription You can unwatch this repository immediately by clicking here: https://github.com/getmailscript/gpt3-api/unsubscribe_via_email/AN2BDH6= 4BEYZNYWIZM4ZBFDSADTX5ANCNFSM4EIBTAKA You were automatically subscribed because you=E2=80=99ve been given access = to the repository. Thanks! -"
+                },
+                "answer": {
+                    "type":"Subscription",
+                    "repository":"getmailscript/gpt3-api",
+                    "links": "https://github.com/getmailscript/gpt3-api%22%7D",
+                    "from":"github"
+                    }
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Rahul Das",
+                            "address": "notifications@github.com"
+                        }
+                    ],
+                    "subject": "Re: [rahul81/Market_Analysis] Create README.md (#1)",
+                    "content": "@rahul81 commented on this pull request. Not Accurate —You are receiving this because you authored the thread.Reply to this email directly, view it on GitHub, or unsubscribe."
+                },
+                "answer": {
+                    "type":"Change on Pull Request",
+                    "by":"rahul81",
+                    "comment":"Not Accurate",
+                    "from": "github"
                     }
             }
+            
         ]
+    },
+    "trello": {
+        "data": [
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Trello",
+                            "address": "do-not-reply@trello.com"
+                        }
+                    ],
+                    "subject": "8 new notifications on GPT3Parser since 4:57 PM (August 12, 2020)",
+                    "content": ".\n\nRahul D added you to the card Wolf of the wall Street (https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street) on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)\n\n Reply via email: nikhilmishra3+2tqhnhzbml13gniy791+2uu3fmazkn6lijc4712+24abwbijo1@"
+                },
+                "answer": {
+                    "type":"Action", 
+                    "by":"Rahul D",
+                    "action":"added",
+                    "card":"Wolf of the wall Street",
+                    "cardLink":"https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street",
+                    "board":"GPT3Parser",
+                    "boardLink":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "from":"trello" 
+                }
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Trello",
+                            "address": "do-not-reply@trello.com"
+                        }
+                    ],
+                    "subject": "8 new notifications on GPT3Parser since 4:57 PM (August 12, 2020)",
+                    "content": "\n\nRahul D moved the card Finding nemo (https://trello.com/c/ofnVRjPQ/5-finding-nemo) to new tings on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)\n\n Reply via email: nikhilmishra3+2tqhnhzbml13gniy791+2uu3fe1tkn81roaxgqb+12qj5s4m1a@"
+                },
+                "answer":{
+                    "type":"Action", 
+                    "by":"Rahul D",
+                    "action":"moved",
+                    "from-card":"Finding Nemo",
+                    "cardLink":"https://trello.com/c/ofnVRjPQ/5-finding-nemo",
+                    "toCard":"new tings",
+                    "board":"GPT3Parser",
+                    "boardLink":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "from":"trello"
+                }
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Trello",
+                            "address": "do-not-reply@trello.com"
+                        }
+                    ],
+                    "subject": "2 new notifications on GPT3Parser since 5:07 PM (August 12, 2020)",
+                    "content":".\n\nRahul D commented on the card Finding nemo (https://trello.com/c/ofnVRjPQ/5-finding-nemo) on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)\n\n \"Try finding nemo asap!! \"\n\n Reply via email: nikhilmishra3+2tqhnhzbml13gniy791+2uu3fe1tkn81roaxgqb+12qj5s4m1a@"
+                },
+                "answer":{
+                    "type":"Action", 
+                    "by":"Rahul D",
+                    "action":"comment",
+                    "card":"Finding nemo",
+                    "cardLink":"https://trello.com/c/ofnVRjPQ/5-finding-nemo",
+                    "comments":"Try finding nemo asap!!",
+                    "board":"GPT3Parser",
+                    "boardLink":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "from":"trello"
+                }
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Trello",
+                            "address": "do-not-reply@trello.com"
+                        }
+                    ],
+                    "subject": "8 new notifications on GPT3Parser since 4:57 PM (August 12, 2020)",
+                    "content": ".\n\nRahul D added you to the card Wolf of the wall Street (https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street) on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)\n\n Reply via email: nikhilmishra3+2tqhnhzbml13gniy791+2uu3fmazkn6lijc4712+24abwbijo1@"
+                },
+                "answer": {
+                    "type":"Action", 
+                    "by":"Rahul D",
+                    "action":"added",
+                    "card":"Wolf of the wall Street",
+                    "cardLink":"https://trello.com/c/rD2hHSAK/7-wolf-of-the-wall-street",
+                    "board":"GPT3Parser",
+                    "boardLink":"https://trello.com/b/Zpi6DEb2/gpt3parser",
+                    "from":"trello" 
+                }
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Trello",
+                            "address": "do-not-reply@trello.com"
+                        }
+                    ],
+                    "subject": "8 new notifications on GPT3Parser since 4:57 PM (August 12, 2020)",
+                    "content": ".\n\nGorka Ludlow moved the card Socket rejection bug (https://trello.com/c/4Xfb7Dld/6-socket-rejection-bug) to Done on MailScript VS Code extension (https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension)\n\n Reply via email: sahilpohare+2qqyfw1segyt5ih27rw+2uqd5icn0p6qj6e9tgs+2kll3h0nz5@"
+                },
+                "answer": {
+                    "type":"Action",
+                    "by":"Gorka Ludlow",
+                    "action":"moved",
+                    "from-card":"Socket rejection bug",
+                    "cardLink":"https://trello.com/c/4Xfb7Dld/6-socket-rejection-bug",
+                    "toCard":"Done",
+                    "board":"MailScript VS Code extension",
+                    "boardLink":"https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension",
+                    "from":"trello"
+                }
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Trello",
+                            "address": "do-not-reply@trello.com"
+                        }
+                    ],
+                    "subject": "8 new notifications on GPT3Parser since 4:57 PM (August 12, 2020)",
+                    "content": "\n\nGorka Ludlow added you to the card Record video msg notification (https://trello.com/c/YPjbAsJK/11-record-video-msg-notification) on MailScript VS Code extension (https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension)\n\n Reply via email: sahilpohare+2qqyfw1segyt5ih27rw+2uqvifazsr7ky655roc+2mvgtbosjq@"
+                },
+                "answer": {
+                    "type":"Action", 
+                    "by":"Gorka Ludlow",
+                    "action":"added",
+                    "card":"Record video msg notification",
+                    "cardLink":"https://trello.com/c/YPjbAsJK/11-record-video-msg-notification",
+                    "board":"MailScript VS Code extension",
+                    "board-link":"https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension",
+                    "from":"trello"
+                }
+            }
+            
+            
+        ]
+    },
+    "github_actions":{
+        "data":[
+            {
+                "prompt":{
+                    "from": [
+                        {
+                            "name": "sahilpohare",
+                            "address": "notifications@github.com"
+                        }
+                    ],
+                    "subject": "[sahilpohare/newRepo] Run failed: dino.js CI - master (5abdf6a)",
+                    "content": "Run failed for master (5abdf6a)\n\nRepository: sahilpohare/newRepo\nWorkflow: dino.js CI\nDuration: 30.0 seconds\nFinished: 2020-08-14 08:17:38 UTC\n\nView results: https://github.com/sahilpohare/newRepo/actions/runs/208283272\n\nJobs:\n  * build (10.x) failed (1 annotation)\n  * build (12.x) cancelled (2 annotations)\n  * build (14.x) cancelled (2 annotations)\n\n-- \nYou are receiving this because this workflow ran on your branch.\nManage your GitHub Actions notifications: https://github.com/settings/notifications"
+
+                },
+                "answer": {
+                    "type":"actions",
+                    "branch":"master",
+                    "repo":"sahilpohare/newRepo\nWorkflow: dino.js CI",
+                    "link":"https://github.com/sahilpohare/newRepo/actions/runs/208283272",
+                    "from":"github"
+                
+                }
+            },
+            {
+                "prompt":{
+                    "from": [
+                        {
+                            "name": "sahilpohare",
+                            "address": "notifications@github.com"
+                        }
+                    ],
+                    "subject": "[sahilpohare/Reactapp] Run failed: App.js CI - master (e6b1a8b)",
+                    "content": "Run failed for master (e6b1a8b)\n\nRepository: sahilpohare/Reactapp\nWorkflow: App.js CI\nDuration: 26.0 seconds\nFinished: 2020-08-14 13:23:02 UTC\n\nView results: https://github.com/sahilpohare/Reactapp/actions/runs/208620926\n\nJobs:\n  * build (10.x) cancelled (2 annotations)\n  * build (12.x) cancelled (2 annotations)\n  * build (14.x) failed (1 annotation)\n\n-- \nYou are receiving this because this workflow ran on your branch.\nManage your GitHub Actions notifications: https://github.com/settings/notifications"
+
+                },
+                "answer": {
+                    "type":"actions",
+                    "branch":"master",
+                    "repo":"sahilpohare/Reactapp\nWorkflow: App.js CI",
+                    "link":"https://github.com/sahilpohare/Reactapp/actions/runs/208254772",
+                    "from":"github"
+                
+                }
+            }
+        ]
+
     }
+
 }
