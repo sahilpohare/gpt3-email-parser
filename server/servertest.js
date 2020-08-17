@@ -38,25 +38,3 @@ axios({
     console.log(res.data);
   })
   .catch((e) => console.log(e.message));
-// test('test parsing', async () => {
-// var jsonData = {
-// 	from: [ { name: 'Rahul Das', address: 'notification@github.com' } ],
-// 	content: htmlData,
-// 	subject: 'rahul81 invited you to rahul81/GPT3parser'
-// };
-// let stringy = JSON.stringify(jsonData);
-// 	let res = await axios({
-// 		url: 'http://localhost:3200/parse',
-// 		headers: {
-// 			'Content-Type': 'application/json'
-// 		},
-// 		data: stringy
-// 	});
-// 	expect(() => res.data[0]).toBe({
-// 		Type: 'Invitation',
-// 		invitor: 'rahul81',
-// 		repo: 'GPT3parser',
-// 		repolink: 'https://github.com/rahul81/GPT3parser',
-// 		For: 'sahilpohare@gmail.com'
-// 	});
-// });
