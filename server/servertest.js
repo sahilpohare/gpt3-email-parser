@@ -206,7 +206,7 @@ const htmlData = `<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 var jsonData = {
   from: [{ name: "Rahul Das", address: "notification@github.com" }],
   content: htmlData,
-  contentType : 'text/html',
+  contentType: "text/html",
   subject: "rahul81 invited you to rahul81/GPT3parser",
 };
 let stringy = JSON.stringify(jsonData);

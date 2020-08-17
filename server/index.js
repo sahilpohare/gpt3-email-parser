@@ -44,6 +44,7 @@ app.get("/parse", async (req, res) => {
   };
 
   parser(data, (result, err, verified) => {
+    console.log(result)
     if (!err || verified) {
       console.log(result[0]);
       console.log("success get : /parse timestamp : " + timestamp, "\n", err);
