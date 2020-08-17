@@ -41,9 +41,9 @@ app.get("/parse", async (req, res) => {
     (result, err, verified) => {
       console.log(result)
       if (!err || verified) {
-        console.log(result)
+        console.log(result[0])
         console.log('success')
-        res.send(result)
+        res.send(result[0])
       } else {
         console.log(err);
         console.log("failed get : /parse timestamp : " + timestamp, "\n", err);

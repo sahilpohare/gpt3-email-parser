@@ -26,10 +26,13 @@ body = args.body
 
 
 if body != None:
-    domain = json.loads(body)["domain"]
-    body = json.loads(body)["content"]
+    data = json.loads(body)
+    domain = data["domain"]
+    body = data["content"]
+    c_type = "text/plain"
+    
 
-    train = GPTTrain(domain=domain)
+    # train = GPTTrain(domain=domain)
 
 
 PATH = "../test_html"
@@ -61,14 +64,10 @@ def read_html(path, domain):
     return resp
 
 
-def run(filename, train, domain):
-    try:
-        if domain not in domainsToProcess:
-            test = read_html(os.path.join(PATH, filename), domain)
-            response, check = train.parse(test)
-        else:
-            response, check = train.parse(filename)
 
+def run(content, train, domain):
+    try: 
+        response, check = train.parse(content)
         try:
             json.loads(response)
             if list(json.loads(response).keys()) == check:
@@ -77,39 +76,61 @@ def run(filename, train, domain):
             else:
                 return response, "fail"
         except Exception as e:
-            return response, "fail"
-
+            return response, 'fail'
     except Exception as e:
-        print(e)
+        return response, 'fail'           
 
-
-def recurse(domain, counter):
+def recurse(body,domain, counter):
     train = GPTTrain(domain=domain)
 
     if filename != None:
         response, status = run(filename, train, domain)
         print(response)
         if status == "fail":
-            # print("fail")
             if counter < len(subdomain) - 1:
                 counter += 1
                 domain = subdomain[counter]
-                recurse(domain, counter)
+                recurse(body, domain, counter)
             else:
-                # print("end of domains")
                 pass
         else:
-            # print("success")
             pass
     elif body != None:
-        response, check = train.parse(convert(body))
-        if json.loads(response)[list(json.loads(response).keys())[-1]] == check:
-            print("Yes")
+
+        if c_type == 'text/plain':
+            response, status = run(body, train, domain)
+            
+            if status == "fail":
+                if counter < len(subdomain) - 1:
+                    counter += 1
+                    domain = subdomain[counter]
+                    recurse(body,domain, counter)
+                else:
+                    pass
+            else:
+                print(json.loads(response))
+        elif c_type == 'text/html':
+            body = convert(body)
+            response, status = run(body, train, domain)
+            
+            if status == "fail":
+                if counter < len(subdomain) - 1:
+                    counter += 1
+                    domain = subdomain[counter]
+                    recurse(body,domain, counter)
+                else:
+                    pass
+            else:
+                print(json.loads(response))
+
+
+
+
 
 
 if domain in subdomain and domain not in domainsToProcess:
     counter = 0
-    recurse(domain, counter)
+    recurse(body,domain, counter)
 
 else:
     train = GPTTrain(domain=domain)
