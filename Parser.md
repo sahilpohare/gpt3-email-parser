@@ -1,7 +1,7 @@
 ## Setting up the virtual environemnt
 Run the following commands in terminal
 ```
-pipenv --python
+pipenv --three
 pipenv install
 pipenv shell
 cd ./server
