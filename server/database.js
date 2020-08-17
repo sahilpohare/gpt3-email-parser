@@ -35,7 +35,7 @@ app.get("/getSamples/:orgname", (req, res) => {
 
 app.get("/getSubDomains/:domainName", (req, res) => {
   console.log(`get :  /subDomains timestamp : ${Date.now()}`);
-  const data = db.getData(`/subdomains/${req.params['domainName']}`);
+  const data = db.getData(`/subdomains/${req.params["domainName"]}`);
   res.json(data);
 });
 
