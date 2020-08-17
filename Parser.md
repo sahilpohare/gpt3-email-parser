@@ -1,12 +1,21 @@
-## Dependecies
-* openai
-* BeautifulSoup4
-* python-dotenv
-
-#### Installing dependencies
-```python 
-pip install -r requirements.txt
+## Setting up the virtual environemnt
+Run the following commands in terminal
 ```
+pipenv --three
+pipenv install
+pipenv shell
+cd ./server
+```
+This will set-up the virtual environment for the file.
+
+## Running the code
+1. To start the database run the following command in terminal:
+```npm run database```
+2. Open another terminal and run the following code:
+```pipenv shell
+   python new_parser.py -i [files in test_html]
+```
+
 
 ## Flow of the code
 #### Working of the Parser
