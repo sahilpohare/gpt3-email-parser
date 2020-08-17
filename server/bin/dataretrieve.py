@@ -4,7 +4,6 @@ import requests
 def get_data(domain):
     data = requests.get("http://localhost:4001/getSamples/" + domain)
     data = data.json()
-
     return data
 
 

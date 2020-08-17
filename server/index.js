@@ -44,15 +44,23 @@ app.get("/parse", async (req, res) => {
         console.log('success')
         res.send(result)
       } else {
-        console.log('error')
-        console.log(err.message);
-        res.send(result)
-        console.log(result)
+        console.log(err);
+        console.log("failed get : /parse timestamp : " + timestamp, "\n", err);
+        res.send("error");
       }
     }
   );
-  console.log(data)
-
+  // let result = await parseMail(req.body.subject, req.body.content, req.body.from);
+  // console.log(result);
+  // if(verified || !err){
+  //   console.log(result);
+  //   res.header('Content-Type','application/json');
+  //   res.send(JSON.stringify(result))
+  // }else{
+  //   console.log(err);
+  //   console.log("failed get : /parse timestamp : " + timestamp, "\n", err);
+  //   res.send("error");
+  // }
 });
 
 app.listen(

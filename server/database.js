@@ -21,12 +21,12 @@ app.post("/addSample", (req, res) => {
 
 app.get("/getSamples/:orgname", (req, res) => {
   const collectionName = req.params["orgname"].toLowerCase();
-  console.log("get : " + collectionName` timestamp : ${Date.now()}`);
+  // console.log("get : " + collectionName` timestamp : ${Date.now()}`);
   const data = db.getData(`/${collectionName}/data`);
   res.json(data);
 });
 
 app.listen(
   process.env.DATABASE_PORT || 4001,
-  console.log(`Database listening on ${process.env.DATABASE_PORT || 4001}`)
+  console.log(`Data Jingle at ${process.env.DATABASE_PORT || 4001}`)
 );

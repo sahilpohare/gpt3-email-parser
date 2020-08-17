@@ -42,7 +42,7 @@ def process(filename, train, domain):
         mail = filename
     mailtest = re.split("boards.trello.com|on Trello|--", mail)[1:-2]
     for i in mailtest:
-        print(i)
+        # print(i)
         resp, _ = run(i, train, domain)
         print(resp)
 
@@ -90,15 +90,17 @@ def recurse(domain, counter):
         response, status = run(filename, train, domain)
         print(response)
         if status == "fail":
-            print("fail")
+            # print("fail")
             if counter < len(subdomain) - 1:
                 counter += 1
                 domain = subdomain[counter]
                 recurse(domain, counter)
             else:
-                print("end of domains")
+                # print("end of domains")
+                pass
         else:
-            print("success")
+            # print("success")
+            pass
     elif body != None:
         response, check = train.parse(convert(body))
         if json.loads(response)[list(json.loads(response).keys())[-1]] == check:

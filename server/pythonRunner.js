@@ -1,6 +1,4 @@
 const { PythonShell } = require("python-shell");
-const { extractDomain } = require("./utils");
-
 
 function parser(data,cb) {
     
