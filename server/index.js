@@ -27,11 +27,11 @@ app.post("/addSample", (req, res) => {
   );
 });
 
-app.get("/parse", async ({from, subject, content}, res) => {
+app.get("/parse", async (req, res) => {
   const timestamp = Date.now();
   console.log("get : /parse timestamp : " + timestamp);
 
-  let {err, result, verified} = parseMail(subject, content, from);
+  let {err, result, verified} = parseMail(req.body.subject, req.body.content, req.body.from);
 
   if(verified || !err){
     console.log(result);
