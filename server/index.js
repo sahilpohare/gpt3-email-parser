@@ -30,18 +30,26 @@ app.post("/addSample", (req, res) => {
 app.get("/parse", async (req, res) => {
   const timestamp = Date.now();
   console.log("get : /parse timestamp : " + timestamp);
+  res.header('Content-Type', 'application/json');
+  parseMail(
+    req.body.subject,
+    req.body.content,
+    req.body.from,
+    (result, err, verified) => {
+      if (!err || verified) {
+        console.log(result)
+        console.log('success')
+        res.send(result)
+      } else {
+        console.log('error')
+        console.log(err.message);
+        res.send(result)
+        console.log(result)
+      }
+    }
+  );
+  console.log(data)
 
-  let {err, result, verified} = parseMail(req.body.subject, req.body.content, req.body.from);
-
-  if(verified || !err){
-    console.log(result);
-    res.header('Content-Type','application/json');
-    res.send(JSON.stringify(result))
-  }else{
-    console.log(err);
-    console.log("failed get : /parse timestamp : " + timestamp, "\n", err);
-    res.send("error");
-  }
 });
 
 app.listen(

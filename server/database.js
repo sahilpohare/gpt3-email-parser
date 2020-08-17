@@ -28,5 +28,5 @@ app.get("/getSamples/:orgname", (req, res) => {
 
 app.listen(
   process.env.DATABASE_PORT || 4001,
-  console.log(`Data Jingle at ${process.env.DATABASE_PORT || 4001}`)
+  console.log(`Database listening on ${process.env.DATABASE_PORT || 4001}`)
 );
