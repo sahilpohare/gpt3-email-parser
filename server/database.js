@@ -1,4 +1,4 @@
-const app = require("express")();
+const app = require("express").Router();
 const { JsonDB } = require("node-json-db");
 const { Config } = require("node-json-db/dist/lib/JsonDBConfig");
 const bodyParser = require("body-parser");
@@ -16,14 +16,14 @@ app.post("/addSample", (req, res) => {
   const collectionName = extractDomain(req.body.prompt.from[0].address);
   console.log("post : " + collectionName + ` timestamp : ${Date.now()}`);
   db.push(`/${collectionName.toLowerCase()}/data[]`, req.body);
-  res.send({status : 'ok'});
+  res.send({ status: 'ok' });
 });
 
-app.post("/addDomain", (req, datares) => {
+app.post("/addDomain", (req, res) => {
   const collectionName = extractDomain(req.body.domaninName);
   console.log("post : " + domainName + ` timestamp : ${Date.now()}`);
   db.push(`/${collectionName.toLowerCase()}/data[]`, req.body);
-  res.send({status : 'ok'});
+  res.send({ status: 'ok' });
 });
 
 app.get("/getSamples/:orgname", (req, res) => {
@@ -39,7 +39,6 @@ app.get("/getSubDomains/:domainName", (req, res) => {
   res.json(data);
 });
 
-app.listen(
-  process.env.DATABASE_PORT || 4001,
-  console.log(`database listening on ${process.env.DATABASE_PORT || 4001}`)
-);
+module.exports = {
+  databaseRouter : app
+}
