@@ -14,7 +14,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded(), bodyParser.json());
 
 var extractDomain = (addr) => addr.split("@")[1].split(".")[0];
-app.use("/database",databaseRouter);
+app.use("/database", databaseRouter);
 app.get("/", (req, res) => res.send("Mail Parse"));
 app.use("./custom_routes", router);
 app.post("/addSample", (req, res) => {
