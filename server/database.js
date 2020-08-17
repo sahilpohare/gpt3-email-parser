@@ -41,5 +41,5 @@ app.get("/getSubDomains/:domainName", (req, res) => {
 
 app.listen(
   process.env.DATABASE_PORT || 4001,
-  console.log(`Data Jingle at ${process.env.DATABASE_PORT || 4001}`)
+  console.log(`database listening on ${process.env.DATABASE_PORT || 4001}`)
 );
