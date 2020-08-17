@@ -205,6 +205,7 @@ or <a href="https://github.com/contact/report-abuse?report=rahul81" style="color
 var jsonData = {
   from: [{ name: "Rahul Das", address: "notification@github.com" }],
   content: htmlData,
+  contentType : 'text/html',
   subject: "rahul81 invited you to rahul81/GPT3parser",
 };
 let stringy = JSON.stringify(jsonData);
