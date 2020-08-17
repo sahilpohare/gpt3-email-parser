@@ -19,6 +19,13 @@ app.post("/addSample", (req, res) => {
   res.send("GREAT");
 });
 
+app.post("/addDomain", (req, res) => {
+  const collectionName = extractDomain(req.body.domaninName);
+  console.log("post : " + domainName + ` timestamp : ${Date.now()}`);
+  db.push(`/${collectionName.toLowerCase()}/data[]`, req.body);
+  res.send({status : 'ok'});
+});
+
 app.get("/getSamples/:orgname", (req, res) => {
   const collectionName = req.params["orgname"].toLowerCase();
   console.log(`get :  ${collectionName} timestamp : ${Date.now()}`);
@@ -26,9 +33,9 @@ app.get("/getSamples/:orgname", (req, res) => {
   res.json(data);
 });
 
-app.get("/getSubDomains", (req, res) => {
+app.get("/getSubDomains/:domainName", (req, res) => {
   console.log(`get :  /subDomains timestamp : ${Date.now()}`);
-  const data = db.getData(`/subdomains`);
+  const data = db.getData(`/subdomains/${req.params['domainName']}/data`);
   res.json(data);
 });
 

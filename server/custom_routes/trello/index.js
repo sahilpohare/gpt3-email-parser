@@ -15,7 +15,7 @@ function trello(parser = function(){}) {
             })
         });
         console.log(ret)
-		res.send(ret);
+		res.send({data : ret});
 	};
 }
 
