@@ -1,4 +1,4 @@
-const app = require("express")();
+const app = require("express").Router();
 const { JsonDB } = require("node-json-db");
 const { Config } = require("node-json-db/dist/lib/JsonDBConfig");
 const bodyParser = require("body-parser");
@@ -39,7 +39,6 @@ app.get("/getSubDomains/:domainName", (req, res) => {
   res.json(data);
 });
 
-app.listen(
-  process.env.DATABASE_PORT || 4001,
-  console.log(`database listening on ${process.env.DATABASE_PORT || 4001}`)
-);
+module.exports = {
+  databaseRouter : app
+}

@@ -6,29 +6,18 @@ const axios = require("axios").default;
 const cors = require("cors");
 const { parser } = require("./pythonRunner");
 const { router } = require("./custom_routes/trello");
+const { databaseRouter } = require("./database");
+var extractDomain = (addr) => addr.split("@")[1].split(".")[0];
 
 require("dotenv").config();
 
 app.use(cors());
 app.use(bodyParser.urlencoded(), bodyParser.json());
 
-var extractDomain = (addr) => addr.split("@")[1].split(".")[0];
-
 app.get("/", (req, res) => res.send("Mail Parse"));
 app.use("/custom_routes", router);
-app.post("/addSample", (req, res) => {
-  const timestamp = Date.now();
-  console.log("post : /addSample timestamp : " + timestamp);
-  axios({
-    url: `${process.env.DATABASE_URL}/addSample`,
-    headers: {
-      "Content-Type": "application/json",
-    },
-    data: req.data,
-  }).catch((e) =>
-    console.log("failed post : /addSample timestamp: " + timestamp)
-  );
-});
+
+app.use("/database", databaseRouter);
 
 app.get("/parse", async (req, res) => {
   const timestamp = Date.now();

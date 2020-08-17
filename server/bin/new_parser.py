@@ -23,7 +23,7 @@ body = args.body
 
 
 def get_data(domain):
-    data = requests.get("http://localhost:4001/getSamples/" + domain)
+    data = requests.get("http://localhost:3200/database/getSamples/" + domain)
     data = data.json()
     return data
 
@@ -34,7 +34,7 @@ if body != None:
     body = data_json["content"]
     c_type = data_json["contentType"]
 
-subdomain = requests.get("http://localhost:4001/getSubDomains/" + domain).json()
+subdomain = requests.get("http://localhost:3200/database/getSubDomains/" + domain).json()
 
 
 """
