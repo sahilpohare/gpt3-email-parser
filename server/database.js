@@ -21,8 +21,14 @@ app.post("/addSample", (req, res) => {
 
 app.get("/getSamples/:orgname", (req, res) => {
   const collectionName = req.params["orgname"].toLowerCase();
-  // console.log("get : " + collectionName` timestamp : ${Date.now()}`);
+  console.log(`get :  ${collectionName} timestamp : ${Date.now()}`);
   const data = db.getData(`/${collectionName}/data`);
+  res.json(data);
+});
+
+app.get("/getSubDomains", (req, res) => {
+  console.log(`get :  /subDomains timestamp : ${Date.now()}`);
+  const data = db.getData(`/subdomains`);
   res.json(data);
 });
 

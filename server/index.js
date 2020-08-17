@@ -35,7 +35,7 @@ app.get("/parse", async (req, res) => {
   console.log("get : /parse timestamp : " + timestamp);
   res.header('Content-Type', 'application/json');
 
-  var data = {...req.body, domain: extractDomain(req.body.from[0].address)}
+  var data = {...req.body, domain: extractDomain(req.body.from[0].address), content : req.body.content, contentType : req.body.contentType}
 
   parser(
     data,
