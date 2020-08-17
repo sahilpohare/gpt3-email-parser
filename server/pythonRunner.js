@@ -2,13 +2,9 @@ const { PythonShell } = require("python-shell");
 const { extractDomain } = require("./utils");
 
 function parseMail(subject = '', content = '', from = []) {
-    var data = { subject, content, from }
+    var fullContent = { subject, content, from, domain: extractDomain(from[0].address),}
+
     const stringy = JSON.stringify(data);
-
-    let data = Object.assign(data, {
-        domain: extractDomain(from[0].address),
-    });
-
     PythonShell.run(
         './bin/new_parser.py',
         {
