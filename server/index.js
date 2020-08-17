@@ -4,7 +4,7 @@ const { PythonShell } = require("python-shell");
 const bodyParser = require("body-parser");
 const axios = require("axios").default;
 const cors = require("cors");
-const { parseMail } = require("./pythonRunner");
+const { parser } = require("./pythonRunner");
 
 require("dotenv").config();
 
@@ -39,6 +39,7 @@ app.get("/parse", async (req, res) => {
   parser(
     data,
     (result, err, verified) => {
+      console.log(result)
       if (!err || verified) {
         console.log(result)
         console.log('success')

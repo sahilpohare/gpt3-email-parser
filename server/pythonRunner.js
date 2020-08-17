@@ -6,7 +6,7 @@ function parser(data,cb) {
     const stringy = JSON.stringify(data);
     
     PythonShell.run(
-        './testing.py',
+        './bin/new_parser.py',
         {
            args: [
                 '-b',
@@ -16,17 +16,17 @@ function parser(data,cb) {
         (err, result) => {
             var verified = false;
             try {
-                var res = JSON.parse(result);
+                var res = JSON.parse(result[0]);
                 verified = true
             } catch{
                 console.log('error @ openai');
                 console.log(res);
                 verified = false
             }
-            cb(result[0],err,verified);
+            console.log(result)
+            cb(result,err,verified);
         }
     )
-    return retval;
 }
 
 module.exports = {
