@@ -4,7 +4,7 @@ const router = require('express').Router();
 
 router.get('/trello',trello);
 
-function trello(parser = function(){}) {
+function trello() {
 	return function(req, res) {
         let par = req.body.content.split(/boards.trello.com|on Trello|--/);
         let domain = extractDomain(req.body.from[0].address);
