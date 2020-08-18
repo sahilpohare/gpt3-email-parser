@@ -71,17 +71,35 @@ def read_html(path, domain):
 def run(content, train, domain):
     try:
         response, check = train.parse(content)
+        print(check)
         try:
             json.loads(response)
-            if list(json.loads(response).keys()) == check:
-                response = json.dumps(response)
-                return response, "passed"
-            else:
-                return response, "fail"
+            response, status = verify(response, check)
+            if status == 'passed':
+                return response, 'passed'
+            else : 
+                return response, 'fail'
+            # if list(json.loads(response).keys()) == check:
+            #     response = json.dumps(response)
+            #     return response, "passed"
+            # else:
+            #     #print(json.dumps({'error' : 'FAILED', 'message' : 'key check failed'}))
+            #     return response, "fail"
         except Exception as e:
+            #print(json.dumps({'error' : e, 'message' : 'json.loads failed'}))
             return response, "fail"
     except Exception as e:
+        #print(json.dumps({'error' : e, 'message' : 'unable to parse'}))
         return "Invalid", "fail"
+    
+def verify(output, key_list):
+    output = json.loads(output)
+    for key in key_list:
+        if output.keys() == key:
+            return output, 'passed'
+        else :
+            pass
+    return output, 'fail'
 
 
 def recurse(body, domain, counter):

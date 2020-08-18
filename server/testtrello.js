@@ -17,8 +17,7 @@ Control how often you receive notification emails on your account page (https://
 Follow @trello on Twitter (https://twitter.com/intent/follow?user_id=360831528)
 
 Get Trello for your iPhone (http://itunes.com/apps/trello) or Trello for your Android (https://play.google.com/store/apps/details?id=com.trello) 
-`;
-
+`
 var jsonData = {
   from: [{ name: "Trello", address: "do-no-reply@trello.com" }],
   content: htmlData,

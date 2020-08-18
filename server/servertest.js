@@ -2,9 +2,11 @@ const { json } = require("body-parser");
 
 const axios = require("axios").default;
 
-const htmlData = `Rahul D added you to the card New stuff to do (https://trello.com/c/vMi1kXIz/2-new-stuff-to-do) on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)
+const htmlData = `Gorka Ludlow commented on the card Transfer ownership of the extension repo to MailScript (https://trello.com/c/m5VdVSGd/13-transfer-ownership-of-the-extension-repo-to-mailscript) on MailScript VS Code extension (https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension)
 
-Reply via email: nikhilmishra3+2tqhnhzbml13gniy791+2uu3dz5ivlpuxg3mbrx+03uafftupp@`;
+"You will continue to have write access, but the repo should be part of the MailScript org."
+
+Reply via email: sahilpohare+2qqyfw1segyt5ih27rw+2uqvijf2y87uf4qv1z5+06px1dmp90@`;
 
 var jsonData = {
   from: [{ name: "Rahul Das", address: "notification@trello.com" }],
