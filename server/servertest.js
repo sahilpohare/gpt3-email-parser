@@ -2,12 +2,26 @@ const { json } = require("body-parser");
 
 const axios = require("axios").default;
 
-const htmlData = `Rahul D added you to the card New stuff to do (https://trello.com/c/vMi1kXIz/2-new-stuff-to-do) on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)
+const htmlData = `Run failed for master (95d7442)
 
-Reply via email: nikhilmishra3+2tqhnhzbml13gniy791+2uu3dz5ivlpuxg3mbrx+03uafftupp@`;
+Repository: sahilpohare/testRepo
+Workflow: Sahil
+Duration: 23.0 seconds
+Finished: 2020-08-14 13:29:25 UTC
+
+View results: https://github.com/sahilpohare/testRepo/actions/runs/208627599
+
+Jobs:
+  * build (10.x) failed (1 annotation)
+  * build (12.x) failed (1 annotation)
+  * build (14.x) cancelled (2 annotations)
+
+-- 
+You are receiving this because this workflow ran on your branch.
+Manage your GitHub Actions notifications: https://github.com/settings/notifications`;
 
 var jsonData = {
-  from: [{ name: "Rahul Das", address: "notification@trello.com" }],
+  from: [{ name: "Rahul Das", address: "notification@github.com" }],
   content: htmlData,
   contentType : 'text/plain',
   subject: "rahul81 invited you to rahul81/GPT3parser",
