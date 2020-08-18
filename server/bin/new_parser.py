@@ -34,72 +34,42 @@ if body != None:
     body = data_json["content"]
     c_type = data_json["contentType"]
 
-subdomain = requests.get("http://localhost:3200/database/getSubDomains/" + domain).json()
-
-
-"""
-PATH = "../test_html"
-
-
-def process(filename, train, domain):
-    if filename != None and body == None:
-        mail = read_html(os.path.join(PATH, filename), domain)
-    else:
-        mail = filename
-    mailtest = re.split("boards.trello.com|on Trello|--", mail)[1:-2]
-    for i in mailtest:
-        # print(i)
-        resp, _ = run(i, train, domain)
-        print(resp)
-
-
-def read_html(path, domain):
-
-    with open(path, "r") as f:
-        resp = f.read()
-        f.close()
-        if domain in domainsToProcess:
-            return resp
-        elif domain == "github_actions":
-            return resp
-
-        resp = convert(resp)
-    return resp
-"""
+subdomain = requests.get(
+    "http://localhost:3200/database/getSubDomains/" + domain
+).json()
 
 
 def run(content, train, domain):
     try:
         response, check = train.parse(content)
-        print(check)
         try:
             json.loads(response)
             response, status = verify(response, check)
-            if status == 'passed':
-                return response, 'passed'
-            else : 
-                return response, 'fail'
-            # if list(json.loads(response).keys()) == check:
-            #     response = json.dumps(response)
-            #     return response, "passed"
-            # else:
-            #     #print(json.dumps({'error' : 'FAILED', 'message' : 'key check failed'}))
-            #     return response, "fail"
+            if status == "passed":
+                retval = {"data": response, "error": None}
+                return json.dumps(retval), "passed"
+            else:
+                return (
+                    json.dumps({"data": response, "error": "key check failed"}),
+                    "fail",
+                )
         except Exception as e:
-            #print(json.dumps({'error' : e, 'message' : 'json.loads failed'}))
-            return response, "fail"
+            return (
+                json.dumps({"data": response, "error": "json parsing failed"}),
+                "fail",
+            )
     except Exception as e:
-        #print(json.dumps({'error' : e, 'message' : 'unable to parse'}))
-        return "Invalid", "fail"
-    
+        return json.dumps({"data": response, "error": "unable to parse"}), "fail"
+
+
 def verify(output, key_list):
     output = json.loads(output)
     for key in key_list:
-        if output.keys() == key:
-            return output, 'passed'
-        else :
+        if list(output.keys()) == key:
+            return output, "passed"
+        else:
             pass
-    return output, 'fail'
+    return output, "fail"
 
 
 def recurse(body, domain, counter):
@@ -131,7 +101,7 @@ def recurse(body, domain, counter):
                 else:
                     pass
             else:
-                print(json.loads(response))
+                print(response)
         elif c_type == "text/html":
             body = convert(body)
             response, status = run(body, train, domain)
@@ -144,9 +114,11 @@ def recurse(body, domain, counter):
                 else:
                     pass
             else:
-                print(json.loads(response))
+                print(response)
 
 
-if domain in subdomain:
-    counter = 0
-    recurse(body, domain, counter)
+if __name__ == "__main__":
+
+    if domain in subdomain:
+        counter = 0
+        recurse(body, domain, counter)

@@ -22,7 +22,7 @@ class GPTTrain(object):
         return resp
 
     def parse(self, test):
-        gpt3 = GPT(engine="davinci", temperature=0.9, max_tokens=150)
+        gpt3 = GPT(engine="davinci", temperature=0.9, max_tokens=200)
 
         for instance in self.data["data"]:
             gpt3.add_example(Example(get_content(instance), get_answer(instance)))
@@ -30,9 +30,5 @@ class GPTTrain(object):
 
         output = output[: output.find("}") + 1]
         output = output.replace("'", '"')
-        # output = json.loads(output)
-        key_list = [list(x['answer'].keys()) for x in self.data['data']]
+        key_list = [list(x["answer"].keys()) for x in self.data["data"]]
         return output, key_list
-        # return output, list(self.data["data"][0]["answer"].keys())
-    
-    

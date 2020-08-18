@@ -2,14 +2,26 @@ const { json } = require("body-parser");
 
 const axios = require("axios").default;
 
-const htmlData = `Gorka Ludlow commented on the card Transfer ownership of the extension repo to MailScript (https://trello.com/c/m5VdVSGd/13-transfer-ownership-of-the-extension-repo-to-mailscript) on MailScript VS Code extension (https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension)
+const htmlData = `Run failed for master (95d7442)
 
-"You will continue to have write access, but the repo should be part of the MailScript org."
+Repository: sahilpohare/testRepo
+Workflow: Sahil
+Duration: 23.0 seconds
+Finished: 2020-08-14 13:29:25 UTC
 
-Reply via email: sahilpohare+2qqyfw1segyt5ih27rw+2uqvijf2y87uf4qv1z5+06px1dmp90@`;
+View results: https://github.com/sahilpohare/testRepo/actions/runs/208627599
+
+Jobs:
+  * build (10.x) failed (1 annotation)
+  * build (12.x) failed (1 annotation)
+  * build (14.x) cancelled (2 annotations)
+
+-- 
+You are receiving this because this workflow ran on your branch.
+Manage your GitHub Actions notifications: https://github.com/settings/notifications`;
 
 var jsonData = {
-  from: [{ name: "Rahul Das", address: "notification@trello.com" }],
+  from: [{ name: "Rahul Das", address: "notification@github.com" }],
   content: htmlData,
   contentType : 'text/plain',
   subject: "rahul81 invited you to rahul81/GPT3parser",
