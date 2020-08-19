@@ -73,7 +73,7 @@
                         }
                     ],
                     "subject": "[nikhilm21/Movie-Recommender] Update README.md (#1)",
-                    "content": "Pull req test You can view, comment on, or merge this pull request online at: https://github.com/nikhilm21/Movie-Recommender/pull/1 Commit Summary Update README.md File Changes M README.md (2) Patch Links: https://github.com/nikhilm21/Movie-Recommender/pull/1.patch https://github.com/nikhilm21/Movie-Recommender/pull/1.diff —You are receiving this because you are subscribed to this thread.Reply to this email directly, view it on GitHub, or unsubscribe."
+                    "content": "You can view, comment on, or merge this pull request online at: https://github.com/nikhilm21/Movie-Recommender/pull/1 Commit Summary Update README.md File Changes M README.md (2) Patch Links: https://github.com/nikhilm21/Movie-Recommender/pull/1.patch https://github.com/nikhilm21/Movie-Recommender/pull/1.diff —You are receiving this because you are subscribed to this thread.Reply to this email directly, view it on GitHub, or unsubscribe."
                 },
                 "answer": {
                     "type":"Pull_Request",
@@ -163,7 +163,7 @@
                     "type":"Action", 
                     "by":"Rahul D",
                     "action":"moved",
-                    "from-card":"Finding Nemo",
+                    "fromCard":"Finding Nemo",
                     "cardLink":"https://trello.com/c/ofnVRjPQ/5-finding-nemo",
                     "toCard":"new tings",
                     "board":"GPT3Parser",
@@ -231,7 +231,7 @@
                     "type":"Action",
                     "by":"Gorka Ludlow",
                     "action":"moved",
-                    "from-card":"Socket rejection bug",
+                    "fromCard":"Socket rejection bug",
                     "cardLink":"https://trello.com/c/4Xfb7Dld/6-socket-rejection-bug",
                     "toCard":"Done",
                     "board":"MailScript VS Code extension",
@@ -257,7 +257,7 @@
                     "card":"Record video msg notification",
                     "cardLink":"https://trello.com/c/YPjbAsJK/11-record-video-msg-notification",
                     "board":"MailScript VS Code extension",
-                    "board-link":"https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension",
+                    "boardLink":"https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension",
                     "from":"trello"
                 }
             }
