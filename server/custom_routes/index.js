@@ -36,8 +36,8 @@ router.get("/trello", async (req, res) => {
 
 router.get('/github_pull_req',(req,res)=>{
   console.log("get: /custom_routes/github_pull_request ");
-
-  let par = req.body.content.split(/--.*--/);
+  let par = req.body.split(/--\s(.*)\s--/);
+  let comments = par[2].split(/\n/);
 });
 
 module.exports = {

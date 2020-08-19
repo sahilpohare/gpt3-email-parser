@@ -22,7 +22,7 @@ app.post("/addSample", (req, res) => {
 app.post("/addDomain", (req, datares) => {
   const collectionName = extractDomain(req.body.domaninName);
   console.log("post : " + domainName + ` timestamp : ${Date.now()}`);
-  db.push(`/${collectionName.toLowerCase()}/data[]`, req.body);
+  db.push(`/subdomains.${req.body.domain}`, req.body.subdomains);
   res.send({ status: "ok" });
 });
 
