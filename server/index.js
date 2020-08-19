@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const axios = require("axios").default;
 const cors = require("cors");
 const { parser } = require("./pythonRunner");
-const { router } = require("./custom_routes/trello");
+const { router } = require("./custom_routes/index.js");
 const { databaseRouter } = require("./database");
 var extractDomain = (addr) => addr.split("@")[1].split(".")[0];
 
