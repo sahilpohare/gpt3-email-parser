@@ -30,5 +30,12 @@ class GPTTrain(object):
 
         output = output[: output.find("}") + 1]
         output = output.replace("'", '"')
+<<<<<<< HEAD
         key_list = [list(x["answer"].keys()) for x in self.data["data"]]
         return output, key_list
+=======
+        key_list = [list(x['answer'].keys()) for x in self.data['data']]
+        return output, key_list
+    
+    
+>>>>>>> 89f5e54d4da539ed4cd1df46353757685853ab9b

@@ -13,19 +13,6 @@ router.get("/trello", async (req, res) => {
     domain: domain,
     contentType: "text/plain",
   }));
-  
-  // asyncForEach(result,async (val,_,_)=>{
-  //     let result;
-  //     try {
-  //       result = await asyncparser(element);
-  //     } catch (e) {
-  //       result = e;
-  //     }
-  //     ret.push(result);
-  //   }
-  // ).then(val => {
-  //   res.send(val);
-  // }
   Promise.all(
     result.map(async (element) => {
       let result;

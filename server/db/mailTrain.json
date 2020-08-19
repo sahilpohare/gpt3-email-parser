@@ -25,7 +25,9 @@
                     "repo": "GPT3parser",
                     "repoLink": "https://github.com/rahul81/GPT3parser",
                     "for": "sahilpohare@gmail.com",
-                    "from":"github"
+                    "from":"github",
+                    "org":"rahul81",
+                    "repo":"GPT3parser"
                 }
             },
             {
@@ -77,6 +79,8 @@
                 },
                 "answer": {
                     "type":"Pull_Request",
+                    "org":"nikhilm21",
+                    "repo":"Movie-Recommender",
                     "repo_link":"https://github.com/nikhilm21/Movie-Recommender/pull/1",
                     "patch_links": [
                         "https://github.com/nikhilm21/Movie-Recommender/pull/1.patch",
@@ -99,8 +103,10 @@
                 "answer": {
                     "type":"Subscription",
                     "repository":"getmailscript/gpt3-api",
-                    "links": "https://github.com/getmailscript/gpt3-api%22%7D",
-                    "from":"github"
+                    "links": "https://github.com/getmailscript/gpt3-api",
+                    "from":"github",
+                    "org":"getmailscript",
+                    "repo":"gpt3-api"
                     }
             },
             {
@@ -118,7 +124,9 @@
                     "type":"Change on Pull Request",
                     "by":"rahul81",
                     "comment":"Not Accurate",
-                    "from": "github"
+                    "from": "github",
+                    "org":"rahul81",
+                    "repo":"Market_Analysis"
                     }
             }
             
@@ -282,7 +290,8 @@
                 "answer": {
                     "type":"actions",
                     "branch":"master",
-                    "repo":"sahilpohare/newRepo\nWorkflow: dino.js CI",
+                    "org":"sahilpohare",
+                    "repo":"newRepo",
                     "link":"https://github.com/sahilpohare/newRepo/actions/runs/208283272",
                     "from":"github"
                 
@@ -303,7 +312,8 @@
                 "answer": {
                     "type":"actions",
                     "branch":"master",
-                    "repo":"sahilpohare/Reactapp\nWorkflow: App.js CI",
+                    "org":"sahilpohare",
+                    "repo":"Reactapp",
                     "link":"https://github.com/sahilpohare/Reactapp/actions/runs/208254772",
                     "from":"github"
                 
