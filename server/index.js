@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const axios = require("axios").default;
 const cors = require("cors");
 const { parser } = require("./pythonRunner");
-const { router } = require("./custom_routes/trello");
+const { router } = require("./custom_routes/index.js");
 const { databaseRouter } = require("./database");
 var extractDomain = (addr) => addr.split("@")[1].split(".")[0];
 
@@ -19,7 +19,7 @@ app.use("/custom_routes", router);
 
 app.use("/database", databaseRouter);
 
-app.get("/parse", async (req, res) => {
+app.post("/parse", async (req, res) => {
   const timestamp = Date.now();
   console.log("get : /parse timestamp : " + timestamp);
   res.header("Content-Type", "application/json");
@@ -38,7 +38,7 @@ app.get("/parse", async (req, res) => {
       res.send(result[0]);
     } else {
       console.log("failed get : /parse timestamp : " + timestamp, "\n", err);
-      res.send("error");
+      res.send({});
     }
   });
 });
