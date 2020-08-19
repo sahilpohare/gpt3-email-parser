@@ -26,11 +26,7 @@ Rahul D added you to the card New stuff to do (https://trello.com/c/vMi1kXIz/2-n
 
  Reply via email: nikhilmishra3+2tqhnhzbml13gniy791+2uu3dz5ivlpuxg3mbrx+03uafftupp@boards.trello.com
 
-<<<<<<< HEAD
 Rahul D added you to the card Yada Yada Yaaaaa (https://trello.com/c/cSWBbNHu/4-yada-yada-yaaaaa) on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)
-=======
-Rahul D removed you from the card New stuff to do (https://trello.com/c/vMi1kXIz/2-new-stuff-to-do) on GPT3Parser (https://trello.com/b/Zpi6DEb2/gpt3parser)
->>>>>>> 89f5e54d4da539ed4cd1df46353757685853ab9b
 
  Reply via email: nikhilmishra3+2tqhnhzbml13gniy791+2uu3dz5ivlpuxg3mbrx+03uafftupp@boards.trello.com
 
@@ -44,11 +40,7 @@ Control how often you receive notification emails on your account page (https://
 
 Follow @trello on Twitter (https://twitter.com/intent/follow?user_id=360831528)
 
-<<<<<<< HEAD
 Get Trello for your iPhone (http://itunes.com/apps/trello) or Trello for your Android (https://play.google.com/store/apps/details?id=com.trello) 
-=======
-Get Trello for your iPhone (http://itunes.com/apps/trello) or Trello for your Android (https://play.google.com/store/apps/details?id=com.trello)  
->>>>>>> 89f5e54d4da539ed4cd1df46353757685853ab9b
 `
 var jsonData = {
   from: [{ name: "Trello", address: "do-no-reply@trello.com" }],
