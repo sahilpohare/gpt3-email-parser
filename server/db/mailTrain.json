@@ -3,7 +3,7 @@
         "trello"
     ],
     "subdomains" : {
-            "github" : [ "github" , "githubactions"],
+            "github" : [ "github" , "githubactions" ],
             "trello" : ["trello"]
             },
     "github": {
@@ -124,11 +124,54 @@
                     "type":"Change on Pull Request",
                     "by":"rahul81",
                     "comment":"Not Accurate",
-                    "from": "github",
                     "org":"rahul81",
-                    "repo":"Market_Analysis"
+                    "repo":"Market_Analysis",
+                    "from": "github"
+                }
+            },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "Gorka Ludlow",
+                            "address": "notifications@github.com"
+                        }
+                    ],
+                    "subject": "Re: [getmailscript/gpt3-api] Add Github actions email templates to train data (#17)",
+                    "content": "Closed #17. —You are receiving this because you commented.Reply to this email directly, view \nit on GitHub, or unsubscribe."
+                },
+                "answer": {
+                    "type":"issues",
+                    "issueId":"17",
+                    "issueName":"Add Github actions email templates to train data",
+                    "action":"Closed",
+                    "org":"getmailscript",
+                    "repo":"gpt3-api",
+                    "from": "github"
                     }
-            }
+                },
+                {
+                    "prompt": {
+                        "from": [
+                            {
+                                "name": "Gorka Ludlow",
+                                "address": "notifications@github.com"
+                            }
+                        ],
+                        "subject": "Re: [getmailscript/gpt3-api] Remove comments from codebase (#7)",
+                        "content": "Can we double-check the whole codebase? See here: https://github.com/getmailscript/gpt3-api/b\nlob/master/server/servertest.js#L41 —You are receiving this because you commented.Reply to th\nis email directly, view it on GitHub, or unsubscribe."
+                    },
+                    "answer": {
+                        "type":"issues",
+                        "issueId":"7",
+                        "issueName":"Remove comments from codebase",
+                        "action":"comment",
+                        "comment":"Can we double-check the whole codebase? See here: https://github.com/getmailscript/gpt3-api/b\nlob/master/server/servertest.js#L41",
+                        "org":"getmailscript",
+                        "repo":"gpt3-api",
+                        "from": "github"
+                        }
+                    }
             
         ]
     },
@@ -269,6 +312,7 @@
                     "from":"trello"
                 }
             }
+            
             
             
         ]
