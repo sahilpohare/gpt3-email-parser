@@ -43,7 +43,7 @@ app.get("/parse", async (req, res) => {
   });
 });
 
-app.listen(
+module.exports = app.listen(
   process.env.PORT || 3200,
   console.log(`Server listening on port : ${process.env.PORT || 3200}`)
 );
