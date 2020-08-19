@@ -37,6 +37,7 @@ if body != None:
     data_json = json.loads(body)
     domain = data_json["domain"]
     body = data_json["content"]
+    subject = data_json['subject']
     c_type = data_json["contentType"]
 
 
@@ -98,6 +99,8 @@ def recurse(body, domain, counter):
     elif body != None:
 
         if c_type == "text/plain":
+            body = convert(body)
+            body = subject+' '+body
             response, status = run(body, train, domain)
 
             if status == "fail":
@@ -111,6 +114,7 @@ def recurse(body, domain, counter):
                 print(response)
         elif c_type == "text/html":
             body = convert(body)
+            body = subject+' '+body
             response, status = run(body, train, domain)
 
             if status == "fail":
