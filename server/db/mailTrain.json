@@ -77,7 +77,7 @@
                     "content": "You can view, comment on, or merge this pull request online at: https://github.com/nikhilm21/Movie-Recommender/pull/1 Commit Summary Update README.md File Changes M README.md (2) Patch Links: https://github.com/nikhilm21/Movie-Recommender/pull/1.patch https://github.com/nikhilm21/Movie-Recommender/pull/1.diff —You are receiving this because you are subscribed to this thread.Reply to this email directly, view it on GitHub, or unsubscribe."
                 },
                 "answer": {
-                    "type":"Pull_Request",
+                    "type":"pull request",
                     "org":"nikhilm21",
                     "repo":"Movie-Recommender",
                     "repo_link":"https://github.com/nikhilm21/Movie-Recommender/pull/1",
