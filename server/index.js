@@ -19,7 +19,7 @@ app.use("/custom_routes", router);
 
 app.use("/database", databaseRouter);
 
-app.get("/parse", async (req, res) => {
+app.post("/parse", async (req, res) => {
   const timestamp = Date.now();
   console.log("get : /parse timestamp : " + timestamp);
   res.header("Content-Type", "application/json");
@@ -38,7 +38,7 @@ app.get("/parse", async (req, res) => {
       res.send(result[0]);
     } else {
       console.log("failed get : /parse timestamp : " + timestamp, "\n", err);
-      res.send("error");
+      res.send({});
     }
   });
 });
