@@ -45,6 +45,13 @@ var jsonData = {
 
 var output = JSON.stringify(jsonData)
 
-var expectedData = {}
+var expectedData = { data:
+    { type: 'Subscription',
+      repository: 'getmailscript/gpt3-api',
+      links: 'https://github.com/getmailscript/gpt3-api',
+      from: 'github',
+      org: 'getmailscript',
+      repo: 'gpt3-api' },
+   error: null }
 
 module.exports = {output,expectedData}

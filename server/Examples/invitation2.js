@@ -207,3 +207,17 @@ var jsonData = {
   contentType : 'text/html',
   subject: "AquiGorka invited you to getmailscript/gpt3-api",
 };
+
+var output = JSON.stringify(jsonData)
+
+var expectedData = { data:
+  { type: 'Invitation',
+    invitor: 'AquiGorka',
+    repo: 'gpt3-api',
+    repoLink: 'https://github.com/getmailscript/gpt3-api',
+    for: 'nkmishra0103@gmail.com',
+    org: 'getmailscript',
+    from: 'github' },
+ error: null }
+
+module.exports = {output,expectedData}

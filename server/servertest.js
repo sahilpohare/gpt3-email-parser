@@ -2,55 +2,6 @@ const { json } = require("body-parser");
 
 const axios = require("axios").default;
 
-const htmlData = `
-<p></p>
-<p>Html and text for the different types of messages<br>
-acceptance criteria: - html + text * 2 (diff msgs) *  types:</p>
-<p><strong>GitHub</strong></p>
-<ul class="contains-task-list">
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> invitation</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> authentication</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> pull_request</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> pull request commit</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> pull request merge</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> pull request change</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> subscription to a repository</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> github_actions</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> pull_req closed</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> pull_req assigned</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> issue assigned</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> issue closed</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> issue comment</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> pull req comment</li>
-</ul>
-<p><strong>Trello</strong></p>
-<ul class="contains-task-list">
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Create a Card</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Assign a card</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Comment on a Card</li>
-<li class="task-list-item"><input type="checkbox" id="" disabled="" class="task-list-item-checkbox"> Move card to another column</li>
-</ul>
-
-<p style="font-size:small;-webkit-text-size-adjust:none;color:#666;">&mdash;<br />You are receiving this because you were assigned.<br />Reply to this email directly, <a href="https://github.com/getmailscript/gpt3-api/issues/25">view it on GitHub</a>, or <a href="https://github.com/notifications/unsubscribe-auth/AN2BDH4NEUS2AREA67JCGPDSBPGRVANCNFSM4QE55IOQ">unsubscribe</a>.<img src="https://github.com/notifications/beacon/AN2BDH6TEVRIU6DSSQSEOHLSBPGRVA5CNFSM4QE55IO2YY3PNVWWK3TUL52HS4DFUVEXG43VMWVGG33NNVSW45C7NFSM4KFD7FYQ.gif" height="1" width="1" alt="" /></p>
-<script type="application/ld+json">[
-{
-"@context": "http://schema.org",
-"@type": "EmailMessage",
-"potentialAction": {
-"@type": "ViewAction",
-"target": "https://github.com/getmailscript/gpt3-api/issues/25",
-"url": "https://github.com/getmailscript/gpt3-api/issues/25",
-"name": "View Issue"
-},
-"description": "View this Issue on GitHub",
-"publisher": {
-"@type": "Organization",
-"name": "GitHub",
-"url": "https://github.com"
-}
-}
-]</script>`;
-
 let invitationMail = `<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
   <head>
@@ -206,7 +157,28 @@ let invitationMail = `<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional/
                         <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: center; width: 540px; margin: 0 auto; padding: 0;">
                           <tr style="vertical-align: top; text-align: center; padding: 0;" align="center">
                             <td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: normal; line-height: 20px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="center" valign="top">
-                              <div class="footer-links" style="text-align: center; padding: 20px 0;" align="center">
+                              <div class<p></p>
+                              <p>Closed <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="677746798" data-permission-text="Title is private" data-url="https://github.com/getmailscript/gpt3-api/issues/23" data-hovercard-type="issue" data-hovercard-url="/getmailscript/gpt3-api/issues/23/hovercard" href="https://github.com/getmailscript/gpt3-api/issues/23">#23</a>.</p>
+                              
+                              <p style="font-size:small;-webkit-text-size-adjust:none;color:#666;">&mdash;<br />You are receiving this because you commented.<br />Reply to this email directly, <a href="https://github.com/getmailscript/gpt3-api/issues/23#event-3669968790">view it on GitHub</a>, or <a href="https://github.com/notifications/unsubscribe-auth/ALLZXMZVHUNCMZIPSB7OKB3SBONKFANCNFSM4P4ZS7HA">unsubscribe</a>.<img src="https://github.com/notifications/beacon/ALLZXMZF5Q6OBUHSXTEWBVTSBONKFA5CNFSM4P4ZS7HKYY3PNVWWK3TUL52HS4DFWZEXG43VMVCXMZLOORHG65DJMZUWGYLUNFXW5KTDN5WW2ZLOORPWSZGO3K7UPFQ.gif" height="1" width="1" alt="" /></p>
+                              <script type="application/ld+json">[
+                              {
+                              "@context": "http://schema.org",
+                              "@type": "EmailMessage",
+                              "potentialAction": {
+                              "@type": "ViewAction",
+                              "target": "https://github.com/getmailscript/gpt3-api/issues/23#event-3669968790",
+                              "url": "https://github.com/getmailscript/gpt3-api/issues/23#event-3669968790",
+                              "name": "View Issue"
+                              },
+                              "description": "View this Issue on GitHub",
+                              "publisher": {
+                              "@type": "Organization",
+                              "name": "GitHub",
+                              "url": "https://github.com"
+                              }
+                              }
+                              ]</script>="footer-links" style="text-align: center; padding: 20px 0;" align="center">
                                 <!-- links need UTM params -->
                                 <p class="footer-text" style="word-wrap: normal; hyphens: none; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: normal; color: #999; line-height: 20px; text-align: center; margin: 0; padding: 0;" align="center"><a href="https://github.com/settings/emails" style="color: #4183C4; text-decoration: none;">Manage your GitHub email preferences</a></p>
                                 <p class="footer-text" style="word-wrap: normal; hyphens: none; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: normal; color: #999; line-height: 20px; text-align: center; margin: 0; padding: 0;" align="center">
@@ -250,14 +222,42 @@ let invitationMail = `<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional/
   </table>
 <!--/.body-->
 </body>
-</html>`;
+</html>
+`;
+
+
+
+htmlData = `
+<p></p>
+<p>Closed <a class="issue-link js-issue-link" data-error-text="Failed to load title" data-id="681999747" data-permission-text="Title is private" data-url="https://github.com/nikhilm21/Movie-Recommender/issues/2" data-hovercard-type="pull_request" data-hovercard-url="/nikhilm21/Movie-Recommender/pull/2/hovercard" href="https://github.com/nikhilm21/Movie-Recommender/pull/2">#2</a>.</p>
+
+<p style="font-size:small;-webkit-text-size-adjust:none;color:#666;">&mdash;<br />You are receiving this because you are subscribed to this thread.<br />Reply to this email directly, <a href="https://github.com/nikhilm21/Movie-Recommender/pull/2#event-3671849256">view it on GitHub</a>, or <a href="https://github.com/notifications/unsubscribe-auth/AN2BDH4MKA24N6EYHO3V25TSBQCATANCNFSM4QFE6CNQ">unsubscribe</a>.<img src="https://github.com/notifications/beacon/AN2BDH77XXCKMXNIY34VPHTSBQCATA5CNFSM4QFE6CN2YY3PNVWWK3TUL52HS4DFWZEXG43VMVCXMZLOORHG65DJMZUWGYLUNFXW5KTDN5WW2ZLOORPWSZGO3LN7SKA.gif" height="1" width="1" alt="" /></p>
+<script type="application/ld+json">[
+{
+"@context": "http://schema.org",
+"@type": "EmailMessage",
+"potentialAction": {
+"@type": "ViewAction",
+"target": "https://github.com/nikhilm21/Movie-Recommender/pull/2#event-3671849256",
+"url": "https://github.com/nikhilm21/Movie-Recommender/pull/2#event-3671849256",
+"name": "View Pull Request"
+},
+"description": "View this Pull Request on GitHub",
+"publisher": {
+"@type": "Organization",
+"name": "GitHub",
+"url": "https://github.com"
+}
+}
+]</script>
+`;
 
 var jsonData = {
-  from: [{ name: "Rahul Das", address: "notification@github.com" }],
-  content: htmlData,
-  contentType : 'text/html',
-  subject: "[getmailscript/gpt3-api] Test samples (#25)",
-};
+    from: [{ name: "nikhilm21", address: "notifications@github.com"}],
+    content: htmlData,
+    contentType : 'text/html',
+    subject: "Re: [nikhilm21/Movie-Recommender] Made some changes to the files (#2)",
+  };
 let stringy = JSON.stringify(jsonData);
 
 axios({
@@ -273,24 +273,24 @@ axios({
   .catch((e) => console.log(e.message));
 
 
-  var jsonData = {
-    from: [{ name: "Rahul Das", address: "notification@github.com" }],
-    content: invitationMail,
-    contentType : 'text/html',
-    subject: "rahul81 invited you to rahul81/GPT3parser",
-  };
+  // var jsonData = {
+  //   from: [{ name: "Rahul Das", address: "notification@github.com" }],
+  //   content: invitationMail,
+  //   contentType : 'text/html',
+  //   subject: "rahul81 invited you to rahul81/GPT3parser",
+  // };
   
-  let strinagy = JSON.stringify(jsonData);
-  axios({
-    url: "http://localhost:3200/parse",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    data: strinagy,
-  })
-    .then((res) => {
-      console.log(res.data);
-    })
-    .catch((e) => console.log(e.message));
+  // let strinagy = JSON.stringify(jsonData);
+  // axios({
+  //   url: "http://localhost:3200/parse",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  //   data: strinagy,
+  // })
+  //   .then((res) => {
+  //     console.log(res.data);
+  //   })
+  //   .catch((e) => console.log(e.message));
   
   

@@ -19,3 +19,16 @@ var jsonData = {
   contentType : 'text/plain',
   subject: "[GitHub] A first-party OAuth application has been added to your account",
 };
+
+var output = JSON.stringify(jsonData)
+
+var expectedData = { data:
+  { type: 'Auth',
+    name: 'nikhilm21',
+    application: 'GitHub for VSCode',
+    link:
+     'https://github.com/settings/connections/applications/01ab8ac9400c4e429b23',
+    from: 'github' },
+ error: null }
+
+module.exports = {output,expectedData}

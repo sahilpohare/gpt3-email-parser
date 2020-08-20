@@ -9,9 +9,10 @@ import json
 
 
 class GPTTrain(object):
-    def __init__(self, data, domain="github"):
+    def __init__(self, data, c_type,domain="github"):
         self.domain = domain
         self.data = data
+        self.c_type = c_type
 
     def read_html(self, path):
 
@@ -25,7 +26,7 @@ class GPTTrain(object):
         gpt3 = GPT(engine="davinci", temperature=0.9, max_tokens=200)
 
         for instance in self.data["data"]:
-            gpt3.add_example(Example(get_content(instance), get_answer(instance)))
+            gpt3.add_example(Example(get_content(instance, self.c_type), get_answer(instance)))
         output = gpt3.get_top_reply(test).replace("output: ", "").strip()
 
         output = output[: output.find("}") + 1]

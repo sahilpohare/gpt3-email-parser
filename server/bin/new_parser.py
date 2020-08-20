@@ -82,7 +82,7 @@ def verify(output, key_list):
 
 def recurse(body, domain, counter):
     data = get_data(domain)
-    train = GPTTrain(data, domain=domain)
+    train = GPTTrain(data, c_type,domain=domain)
 
     if filename != None:
         response, status = run(filename, train, domain)
@@ -100,7 +100,6 @@ def recurse(body, domain, counter):
 
         if c_type == "text/plain":
             body = convert(body)
-            body = subject+' '+body
             response, status = run(body, train, domain)
 
             if status == "fail":
@@ -114,7 +113,7 @@ def recurse(body, domain, counter):
                 print(response)
         elif c_type == "text/html":
             body = convert(body)
-            body = subject+' '+body
+            body = body+' $$ '+subject
             response, status = run(body, train, domain)
 
             if status == "fail":

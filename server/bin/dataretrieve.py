@@ -1,8 +1,9 @@
-def get_content(data_instance):
+def get_content(data_instance, c_type):
 
     body = data_instance["prompt"]["content"]
-    subject = data_instance['prompt']['subject']
-    body = subject +' '+ body
+    if c_type != 'text/plain':
+        subject = data_instance['prompt']['subject']
+        body = body +' $$ ' +subject
     return body
 
 

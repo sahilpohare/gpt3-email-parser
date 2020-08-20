@@ -19,7 +19,7 @@ app.use("/custom_routes", router);
 
 app.use("/database", databaseRouter);
 
-app.post("/parse", async (req, res) => {
+app.get("/parse", async (req, res) => {
   const timestamp = Date.now();
   console.log("get : /parse timestamp : " + timestamp);
   res.header("Content-Type", "application/json");

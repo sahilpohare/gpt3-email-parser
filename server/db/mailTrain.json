@@ -3,7 +3,7 @@
         "trello"
     ],
     "subdomains" : {
-            "github" : [ "github" , "githubactions", "githubissues"],
+            "github" : [ "github" , "githubactions","githubissues", "githubpull" ],
             "trello" : ["trello"]
             },
     "github": {
@@ -62,7 +62,7 @@
                 "answer":{
                     "type":"email_added",
                     "name":"rahul81",
-                    "new_email":"rahul.das@adypu.edu.in",
+                    "newEmail":"rahul.das@adypu.edu.in",
                     "from":"github"}
             },
             {
@@ -80,8 +80,8 @@
                     "type":"pull request",
                     "org":"nikhilm21",
                     "repo":"Movie-Recommender",
-                    "repo_link":"https://github.com/nikhilm21/Movie-Recommender/pull/1",
-                    "patch_links": [
+                    "repoLink":"https://github.com/nikhilm21/Movie-Recommender/pull/1",
+                    "patchLinks": [
                         "https://github.com/nikhilm21/Movie-Recommender/pull/1.patch",
                         "https://github.com/nikhilm21/Movie-Recommender/pull/1.diff"
                         ]
@@ -101,33 +101,15 @@
                 },
                 "answer": {
                     "type":"Subscription",
-                    "repository":"getmailscript/gpt3-api",
-                    "links": "https://github.com/getmailscript/gpt3-api",
-                    "from":"github",
+                    "repo":"gpt3-api",
+                    "link": "https://github.com/getmailscript/gpt3-api",
                     "org":"getmailscript",
-                    "repo":"gpt3-api"
+                    "from":"github"
+                    
+                    
                     }
-            },
-            {
-                "prompt": {
-                    "from": [
-                        {
-                            "name": "Rahul Das",
-                            "address": "notifications@github.com"
-                        }
-                    ],
-                    "subject": "Re: [rahul81/Market_Analysis] Create README.md (#1)",
-                    "content": "@rahul81 commented on this pull request. Not Accurate —You are receiving this because you authored the thread.Reply to this email directly, view it on GitHub, or unsubscribe."
-                },
-                "answer": {
-                    "type":"Change on Pull Request",
-                    "by":"rahul81",
-                    "comment":"Not Accurate",
-                    "org":"rahul81",
-                    "repo":"Market_Analysis",
-                    "from": "github"
-                }
             }
+            
             
         ]
     },
@@ -245,29 +227,8 @@
                     "boardLink":"https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension",
                     "from":"trello"
                 }
-            },
-            {
-                "prompt": {
-                    "from": [
-                        {
-                            "name": "Trello",
-                            "address": "do-not-reply@trello.com"
-                        }
-                    ],
-                    "subject": "8 new notifications on GPT3Parser since 4:57 PM (August 12, 2020)",
-                    "content": "\n\nGorka Ludlow added you to the card Record video msg notification (https://trello.com/c/YPjbAsJK/11-record-video-msg-notification) on MailScript VS Code extension (https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension)\n\n Reply via email: sahilpohare+2qqyfw1segyt5ih27rw+2uqvifazsr7ky655roc+2mvgtbosjq@"
-                },
-                "answer": {
-                    "type":"Action", 
-                    "by":"Gorka Ludlow",
-                    "action":"added",
-                    "card":"Record video msg notification",
-                    "cardLink":"https://trello.com/c/YPjbAsJK/11-record-video-msg-notification",
-                    "board":"MailScript VS Code extension",
-                    "boardLink":"https://trello.com/b/ypYPPQTH/mailscript-vs-code-extension",
-                    "from":"trello"
-                }
             }
+
             
             
             
@@ -337,11 +298,12 @@
                 },
                 "answer": {
                     "type":"issues",
-                    "issueId":"17",
+                    "id":"17",
                     "issueName":"Add Github actions email templates to train data",
-                    "action":"Closed",
+                    "activity":"Closed #17.",
                     "org":"getmailscript",
                     "repo":"gpt3-api",
+                    "link":"https://github.com/getmailscript/gpt3-api/issues/17",
                     "from": "github"
                     }
                 },
@@ -358,41 +320,133 @@
                     },
                     "answer": {
                         "type":"issues",
-                        "issueId":"7",
+                        "id":"7",
                         "issueName":"Remove comments from codebase",
-                        "action":"comment",
-                        "comment":"Can we double-check the whole codebase? See here: https://github.com/getmailscript/gpt3-api/b\nlob/master/server/servertest.js#L41",
+                        "activity":"Can we double-check the whole codebase? See here: https://github.com/getmailscript/gpt3-api/b\nlob/master/server/servertest.js#L41",
                         "org":"getmailscript",
                         "repo":"gpt3-api",
+                        "link":"https://github.com/getmailscript/gpt3-api/issues/7",
                         "from": "github"
                         }
                     },
-                    {
-                        "prompt": {
-                            "from": [
-                                {
-                                    "name": "Gorka Ludlow",
-                                    "address": "notifications@github.com"
-                                }
-                            ],
-                            "subject": "[getmailscript/gpt3-api] Experiment with more than one model for a template to prevent limitations (#22)",
-                            "content": "Feed an email to the model and learn if it returns whitelisted values to loop through available models for a service —You are receiving this because you are subscribed to this thread.Reply to this email directly, view it on GitHub, or unsubscribe."
-                        },
-                        "answer": {
-                            "type":"issues",
-                            "issueId":"22",
-                            "issueName":"Experiment with more than one model for a template to prevent limitations",
-                            "action":"comment",
-                            "comment":"Feed an email to the model and learn if it returns whitelisted values to loop through available models for a service",
-                            "org":"getmailscript",
-                            "repo":"gpt3-api",
-                            "from":"github"
+            {
+                    "prompt": {
+                        "from": [
+                            {
+                                "name": "Gorka Ludlow",
+                                "address": "notifications@github.com"
                             }
+                        ],
+                        "subject": "Re: [getmailscript/gpt3-api] Ensure code environment via pipenv and add code format via black (#14)",
+                        "content": "Closed #14. —You are receiving this because you commented.Reply to this email directly, view it on GitHub, or unsubscribe"
+                    },
+                    "answer": {
+                        "type":"issues",
+                        "id":"14",
+                        "issueName":"Ensure code environment via pipenv and add code format via black",
+                        "activity":"Closed #14.",
+                        "org":"getmailscript",
+                        "repo":"gpt3-api",
+                        "link":"https://github.com/getmailscript/gpt3-api/issues/14",
+                        "from": "github"
                         }
+                },
+                {
+                    "prompt": {
+                        "from": [
+                            {
+                                "name": "Gorka Ludlow",
+                                "address": "notifications@github.com"
+                            }
+                        ],
+                        "subject": "Re: [getmailscript/gpt3-api] Ensure code environment via pipenv and add code format via black (#14)",
+                        "content": "Still missing the reference in the README. —You are receiving this because you commented.Repl\ny to this email directly, view it on GitHub, or unsubscribe."
+                    },
+                    "answer": {
+                        "type":"issues",
+                        "id":"14",
+                        "issueName":"Ensure code environment via pipenv and add code format via black",
+                        "activity":"Still missing the reference in the README.",
+                        "org":"getmailscript",
+                        "repo":"gpt3-api",
+                        "link":"https://github.com/getmailscript/gpt3-api/issues/14",
+                        "from": "github"
+                        }
+                    }    
 
         ]
+
+    
+    },
+    "githubpull": {
+        "data": [
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "nikhilm21",
+                            "address": "notifications@github.com"
+                        }
+                    ],
+                    "subject": "Re: [nikhilm21/Triallalala] Some majjor updates (#1)",
+                    "content": "Merged #1 into master. —You are receiving this because you are subscribed to this thread.Reply to this email directly, view it on GitHub, or unsubscribe."
+                },
+                "answer": {
+                    "type":"pull",
+                    "id":"1",
+                    "issueName":"Some majjor updates",
+                    "activity":"Merged #1 into master",
+                    "org":"nikhilm21",
+                    "repo":"Triallalala",
+                    "link":"https://github.com/nikhilm21/Triallalala/pull/1",
+                    "from": "github"
+                    }
+                },
+            {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "nikhilm21",
+                            "address": "notifications@github.com"
+                        }
+                    ],
+                    "subject": "Re: [nikhilm21/Triallalala] Some majjor updates (#1)",
+                    "content": "Barack Obama served as the 44th President of the United States from 2009= to 2017. Before his presidency, he served in the Illinois Senate (1997=E2= =80=932004) and the United States Sen\nate (2005=E2=80=932008). It was during his campaign for the United States Senate that he firs\nt ma= de a speech that received nationwide attention; he gave the keynote address= at the 200\n4 Democratic National Convention. You are receiving this because you \nauthored the thread.Reply= to this email directly, view it on GitHub, or unsubscribe."
+                },
+                "answer": {
+                    "type":"pull",
+                    "id":"1",
+                    "issueName":"Some majjor updates",
+                    "activity":"Barack Obama served as the 44th President of the United States from 2009= to 2017. Before his presidency, he served in the Illinois Senate (1997=E2= =80=932004) and the United States Sen\nate (2005=E2=80=932008). It was during his campaign for the United States Senate that he firs\nt ma= de a speech that received nationwide attention; he gave the keynote address= at the 200\n4 Democratic National Convention.",
+                    "org":"nikhilm21",
+                    "repo":"Triallalala",
+                    "link":"https://github.com/nikhilm21/Triallalala/pull/1",
+                    "from": "github"
+                    }
+                },
+                {
+                "prompt": {
+                    "from": [
+                        {
+                            "name": "nikhilm21",
+                            "address": "notifications@github.com"
+                        }
+                    ],
+                    "subject": "Re: [nikhilm21/Movie-Recommender] Made some changes to the files (#2)",
+                    "content": "Closed #2. —You are receiving this because you are subscribed to this thread.Reply to this email directly, view it on GitHub, or unsubscribe."
+                },
+                "answer": {
+                    "type":"pull",
+                    "id":"2",
+                    "issueName":"Made some changes to the files",
+                    "activity":"Closed #2",
+                    "org":"nikhilm21",
+                    "repo":"Movie-Recommender",
+                    "link":"https://github.com/nikhilm21/Movie-Recommender/pull/2",
+                    "from": "github"
+                    }
+
+            }
+        ]
     }
-
-
-
 }

@@ -207,3 +207,16 @@ var jsonData = {
   contentType : 'text/html',
   subject: "	sahilpohare invited you to sahilpohare/libp2pTSNeuralnet",
 };
+
+var output = JSON.stringify(jsonData)
+
+var expectedData = { data:
+  { type: 'Invitation',
+    invitor: 'sahilpohare',
+    repo: 'libp2pTSNeuralnet',
+    repoLink: 'https://github.com/sahilpohare/libp2pTSNeuralnet',
+    for: 'nkmishra0103',
+    org: 'sahilpohare',
+    from: 'github' },
+ error: null }
+module.exports = {output,expectedData}

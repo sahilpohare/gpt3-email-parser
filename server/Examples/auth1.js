@@ -18,3 +18,16 @@ var jsonData = {
   contentType : 'text/plain',
   subject: "[GitHub] A third-party OAuth application has been added to your account",
 };
+
+var output = JSON.stringify(jsonData)
+
+var expectedData = { data:
+  { type: 'Auth',
+    name: 'nikhilm21',
+    application: 'GitKraken',
+    link:
+     'https://github.com/settings/connections/applications/a7557949433b7d282a76',
+    from: 'github' },
+ error: null }
+
+module.exports = {output,expectedData}
